@@ -1,0 +1,63 @@
+$column: 90px;
+$gutter: 30px;
+$grid-columns: 12;
+$max-width: 100%;
+
+.body {
+	font-family: $helvetica;
+}
+
+.row {
+	@include outer-container;
+	margin: 20px;
+	.span9 {
+		@include span-columns(9);
+		.prva {
+			@include size(100% 350px);
+		}
+	}
+
+	.span3 {
+		@include span-columns(3);
+		@include omega();
+		.deseta {
+			@include size(100% 350px);
+		}
+	}
+}
+
+
+p#prvi {
+	@include box-sizing(border-box);
+	border: 2px solid #cecece;
+	background-color: #e5e5e5;
+	@include pad(10px);
+	margin: 20px;
+	font: {
+	    size: 15px;
+	    weight: bold;
+	    family: $helvetica;
+	}
+}
+
+.slika {
+	@include size(230);
+}
+
+.blok {
+	@include span-columns(3);
+	@include omega(4n);
+	@include box-sizing(border-box);
+	@include pad(24px);
+	border: 1px solid #cecece;
+	margin: 10px;
+	h4 {
+			font-family: $helvetica;
+	}
+	.drugi {
+		font: {
+		    size: 14px;
+		    family: $helvetica;
+		}
+	}
+}

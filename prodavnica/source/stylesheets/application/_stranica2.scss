@@ -1,0 +1,62 @@
+$column: 90px;
+$gutter: 30px;
+$grid-columns: 12;
+$max-width: 100%;
+
+.block {
+	margin-top: -70px;
+	.left {
+		@include span-columns(2);
+		@include omega();
+		height: 687px;
+		background-color: #f2ae72;
+	}
+	.top {
+		@include span-columns(7);
+		@include omega();
+		@include size(755px 200px);
+		background-color: #023059;
+		margin-right: 0px;
+	}
+	.right {
+		@include span-columns(3);
+		@include omega();
+		height: 335px;
+		background-color: #fa884b;
+		margin-left: -20px;
+	}
+}
+
+.divtitle {
+	font: {
+	    size: 70px;
+	    style: italic;
+	    color: #05002f;
+	    weight: bold;
+	    family: $georgia;
+	}
+	margin-left: 340px;
+}
+
+.paragraph {
+	@include size(250px 100px);
+	font: {
+	    size: 14px;
+	    style: italic;
+	    color: #00002f;
+	    family: $georgia;
+	}
+	float: right;
+	margin-top: -110px;
+	text-align: right;
+	margin-right: 35px;
+	line-height: 2em;
+}
+
+.bottom {
+	@include span-columns(9);
+	@include omega();
+	@include size(1020px 132px);
+	background-color: #3c88a6;
+	margin-top: 70px;
+}

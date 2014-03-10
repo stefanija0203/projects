@@ -1,0 +1,207 @@
+$column: 90px;
+$gutter: 30px;
+$grid-columns: 12;
+$max-width: 100%;
+
+@mixin b {
+	background-color: #00248F;
+	margin-bottom: 20px;
+	height: 100px;
+}
+
+@mixin mr {
+	background-color: #B8008A;
+	margin-bottom: 20px;
+	height: 100px;
+}
+
+@mixin nc {
+	background-color: #00B800;
+	height: 100px;
+}
+
+@mixin t {
+	background-color: #E68A00;
+	margin-bottom: 20px;
+	height: 100px;
+}
+
+@mixin mq {
+	height: 100px;
+	margin-bottom: 20px;
+	background-color: #3333CC;
+}
+
+.basic {
+	@include outer-container;
+	height: 170px;
+	background-color: #8092C7;
+	margin-top: 30px;
+	.basic1 {
+		@include span-columns(6);
+		@include b;
+	}
+	.basic2 {
+		@include span-columns(6);
+		@include b;
+	}
+}
+
+.multiplerows {
+	@include outer-container;
+	background-color: #DC80C4;
+	height: 770px;
+	margin-top: 30px;
+	.mr1 {
+		@include span-columns(1);
+		@include mr;
+	}
+	.mr11 {
+		@include span-columns(11);
+		@include omega();
+		@include mr;
+	}
+	.mr2 {
+		@include span-columns(2);
+		@include mr;
+	}
+	.mr10 {
+		@include span-columns(10);
+		@include omega();
+		@include mr;
+	}
+	.mr3 {
+		@include span-columns(3);
+		@include mr;
+	}
+	.mr9 {
+		@include span-columns(9);
+		@include omega();
+		@include mr;
+	}
+	.mr4 {
+		@include span-columns(4);
+		@include mr;
+	}
+	.mr8 {
+		@include span-columns(8);
+		@include omega();
+		@include mr;
+	}
+	.mr5 {
+		@include span-columns(5);
+		@include mr;
+	}
+	.mr7 {
+		@include span-columns(7);
+		@include omega();
+		@include mr;
+	}
+		.mr61 {
+		@include span-columns(6);
+		@include mr;
+	}
+	.mr62 {
+		@include span-columns(6);
+		@include omega();
+		@include mr;
+	}
+}
+
+.nestingcolumns {
+	@include outer-container;
+	height: 220px;
+	background-color: #80DC80;
+	margin-top: 30px;
+	.nc4{
+		@include span-columns(4);
+		background-color: #00B800;
+		height: 150px;
+	}
+	.nc8 {
+		@include span-columns(8);
+		@include omega();
+		background-color: #4DCD4D;
+		.nc481 {
+			@include span-columns(4 of 8);
+			@include nc;
+		}
+		.nc482 {
+			@include span-columns(4 of 8);
+			@include nc;
+		}
+	}
+}
+
+.tablegrid {
+	@include outer-container;
+	background-color: #FFCC80;
+	margin-top: 30px;
+	height: 170px;
+	.table {
+		@include span-columns(12);
+		@include row(table);
+		background-color: #FFB84D;
+		.t4 {
+			@include span-columns(4);
+			@include pad();
+			@include t;
+		}
+		.t8 {
+			@include span-columns(8);
+			@include reset-display;
+			@include pad();
+			@include t;
+		}
+	}
+}
+
+.shiftingcolumns {
+	@include outer-container;
+	background-color: #FF8080;
+	margin-top: 30px;
+	.shifted {
+		@include span-columns(6);
+		@include shift(3);
+		height: 100px;
+		margin-bottom: 20px;
+		background-color: #FF0000;
+	}
+}
+
+.automaticrows {
+	@include outer-container;
+	background-color: #FFFF80;
+	margin-top: 30px;	
+	.ar {
+		@include span-columns(3);
+		@include omega(4n);
+		height: 100px;
+		background-color: #FFFF00;
+		margin-bottom: 20px;
+	}
+}
+
+.mediaqueries {
+	@include outer-container;
+	$mobile: new-breakpoint(max-width 500px 6);
+	background-color: #9999E6;
+	margin-bottom: 30px;
+	height: 170px;
+	.media {
+		.mq4 {
+			@include span-columns(4);
+			@include media($mobile) {
+				@include span-columns(3);
+			}
+			@include mq;
+		}
+		.mq8 {
+			@include span-columns(8);
+			@include media($mobile) {
+				@include span-columns(3);
+			}
+			@include mq;
+		}
+	}	
+}
