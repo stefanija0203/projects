@@ -1,0 +1,71 @@
+$grid-columns: 12;
+$max-width: 100%;
+
+
+.top {
+	@include outer-container;
+	margin-top: 40px;
+	.tencol {
+		@include span-columns(10);
+		@include shift(1);
+		.main {
+			@include span-columns(7 of 10);
+			img {
+				@include size(670px 240px);
+				margin-top: 16px;
+
+			}
+		}
+		.side {
+			@include span-columns(3 of 10);
+			@include omega();
+			nav {
+				background-color: #efe5d0;
+				ul{
+					list-style-type: none;
+					margin-left: -40px;
+					li {
+						padding: 10px 0 10px 20px;
+						border: 1px solid #ACA595;
+					}
+				}
+			}
+		}
+	}
+}
+
+.onefourone {
+	@include outer-container;
+	margin-top: 40px;
+	.one {
+		@include span-columns(2);
+		img {
+			@include size(130px 120px);
+			margin: 10px 35px;
+		}
+	}
+	.four {
+		@include span-columns(8);
+		.box {
+			@include box-sizing(border-box);
+			@include size(250px 200px);
+			border: 2px solid black;
+			padding: 0 20px;
+			float: right;
+		}
+		p {
+			position: relative;
+			text-align: justify;
+		}
+	}
+	.onesec {
+		@include span-columns(2);
+		h4 {
+			margin-left: -10px;
+		}
+		p {
+			font-size: 14px;
+			margin: -15px 10px 0 10px;
+		}
+	}
+}

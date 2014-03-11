@@ -1,0 +1,235 @@
+$column: 66px;
+$gutter: 0px;
+$grid-columns: 12;
+$max-width: 100%;
+$color: #CC3300;
+$col: 76px;
+$ml: 858px;
+
+
+@mixin ioh {
+	@include span-columns(1);
+	@include omega();
+	height: 69px;
+}
+
+.one {
+	@include outer-container;
+	.alfa {
+		@include ioh;
+		background-color: $color;
+		margin-left: 859px;
+	}
+}
+
+.two {
+	@include outer-container;
+	.vita {
+		@include ioh;
+		background-color: $color;
+		margin-left: $ml - ($col * 2);
+	}
+	.gama {
+		@include ioh;
+		background-color: $color/2;
+	}
+	.delta {
+		@include ioh;
+		background-color: $color/3;
+	}
+}
+
+.three {
+	@include outer-container;
+	.epsilon {
+		@include ioh;
+		background-color: $color*5;
+		margin-left: $ml - ($col * 2);
+	}
+	.zita {
+		@include ioh;
+		background-color: $color*4;
+	}
+	.ita {
+		@include ioh;
+		background-color: $color*3;
+	}
+	.tita {
+		@include ioh;
+		background-color: $color*2;
+	}
+}
+
+.four {
+	@include outer-container;
+	.jota {
+		@include ioh;
+		background-color: $color/4;
+		margin-left: $ml - ($col * 4);
+	}
+	.kapa {
+		@include ioh;
+		background-color: $color/3;
+	}
+	.lambda {
+		@include ioh;
+		background-color: $color/2;
+	}
+	.mi {
+		@include ioh;
+		background-color: $color;
+	}
+}
+
+.five {
+	@include outer-container;
+	.ni {
+		@include ioh;
+		background-color: $color*2;
+		margin-left: $ml - ($col * 5);
+	}
+	.ksi {
+		@include ioh;
+		background-color: $color*3;
+	}
+	.omihron {
+		@include ioh;
+		background-color: $color*4;
+	}
+	.pi {
+		@include ioh;
+		background-color: $color*5;
+	}
+}
+
+.six {
+	@include outer-container;
+	.ro {
+		@include ioh;
+		background-color: $color;
+		margin-left: $ml - ($col * 4);
+	}
+	.sigma {
+		@include ioh;
+		background-color: $color/2;
+	}
+	.taf {
+		@include ioh;
+		background-color: $color/3;
+	}
+}
+
+.seven {
+	@include outer-container;
+	.ipsilon {
+		@include ioh;
+		background-color: $color*4;
+		margin-left: $ml - ($col * 3);
+	}
+	.fi {
+		@include ioh;
+		background-color: $color*3;
+	}
+	.hi {
+		@include ioh;
+		background-color: $color*2;
+	}
+}
+
+.eight {
+	@include outer-container;
+	.psi {
+		@include ioh;
+		background-color: $color/4;
+		margin-left: $ml - ($col * 5);
+	}
+	.omega {
+		@include ioh;
+		background-color: $color/3;
+	}
+	.alfa1 {
+		@include ioh;
+		background-color: $color/2;
+	}
+	.vita1 {
+		@include ioh;
+		background-color: $color;
+	}
+}
+
+.nine {
+	@include outer-container;
+	.gama1 {
+		@include ioh;
+		background-color: $color;
+		margin-left: $ml - ($col * 7);
+	}
+	.delta1 {
+		@include ioh;
+		background-color: $color*2;
+	}
+	.epsilon1 {
+		@include ioh;
+		background-color: $color*3;
+	}
+	.zita1 {
+		@include ioh;
+		background-color: $color*4;
+	}
+	.ita1 {
+		@include ioh;
+		background-color: $color*5;
+	}
+}
+
+.ten {
+	@include outer-container;
+	.tita1 {
+		@include ioh;
+		background-color: $color/2;
+		margin-left: $ml - ($col * 6);
+	}
+	.jota1 {
+		@include ioh;
+		background-color: $color/3;
+	}
+}
+
+.eleven {
+	margin-top: -700px;
+	margin-left: 20px;
+	.title {
+		font: {
+			size: 100px;
+			style: italic;
+			weight: bold;
+		};
+	}
+}
+
+.twelve {
+	@include size(250px 200px);
+	margin-left: 20px;
+	margin-top: -50px;
+	.par1 {
+		font: {
+			size: 14px;
+			style: italic;
+		};
+		text-align: justify;
+	}
+}
+
+.thirteen {
+	@include size(250px 200px);
+	float: right;
+	margin-top: -140px;
+	margin-right: 20px;
+	.par2 {
+		font: {
+			size: 14px;
+			style: italic;
+		};
+		text-align: justify;
+	}
+}
