@@ -13,9 +13,13 @@ $max-width: 1060px;
 	padding: 35px 45px;
 }
 
-.body {
-	background-color: #ffffff;
+@mixin btn2 {
+	@include size(70px 40px);
+	background-color: #47DAB5;
 }
+
+.progress {
+	background-color: #ffffff;
 
 .header {
 	width: 100%;
@@ -72,7 +76,7 @@ $max-width: 1060px;
 .picstretch {
 	@include size(auto 450px);
 	background-image: url('../images/progress2.jpg');
-	background-size: 1200px 450px;
+	background-size: 1333px 450px;
 	.control {
 		@include outer-container;
 		.left {
@@ -117,14 +121,24 @@ $max-width: 1060px;
 		background-color: #47DAB5;
 		@include ftext;
 		color: #ffffff;
+		.btn1 {
+			@include size(70px 40px);
+			background-color: #ffffff;
+		}
 	}
 	.f2 {
 		@include span-columns(4);
 		@include ftext;
+		.btn2 {
+			@include btn2;
+		}
 	}
 	.f3 {
 		@include span-columns(4);
 		@include ftext;
+		.btn2 {
+			@include btn2;
+		}
 	}
 }
 
@@ -143,9 +157,8 @@ $max-width: 1060px;
 			line-height: 2em;
 		}
 		.btn2 {
-			@include size(70px 40px);
-			margin-top: 50px;
-			background-color: #47DAB5;
+			@include btn2;
+			margin-top: 30px;
 		}
 	}
 	.s2 {
@@ -154,7 +167,7 @@ $max-width: 1060px;
 		padding: 20px 15px;
 		margin-top: 20px;
 		.divs2 {
-			margin-top: 40px;
+			margin-top: 25px;
 			.h3s2 {
 				font-style: italic;
 			}
@@ -176,7 +189,7 @@ $max-width: 1060px;
 		margin: 20px 0;
 		font-style: italic;
 		img {
-			@include size(300px 200px);
+			@include size(300px 130px);
 		}
 		.ps3 {
 			font-size: 14px;
@@ -184,3 +197,47 @@ $max-width: 1060px;
 	}
 }
 
+.third {
+	@include outer-container();
+	.box {
+		@include span-columns(6);
+		@include omega();
+		height: 100px;
+		margin-top: 25px;
+		padding: 10px 20px;
+		img {
+			@include size(60px 60px);
+			float: left;
+		}
+		.h5b {
+			margin-top: -10px;
+		}
+		.pb {
+			font-size: 14px;
+			margin-top: -15px;
+		}
+
+	}
+}
+
+.footer {
+	@include outer-container;
+	border-top: 5px solid #e6e6e6;
+	.foot {
+		@include span-columns(3);
+		.h5f {
+			font-style: italic;
+			border-bottom: 1px solid #e2e2e2;
+		}
+		ul {
+			list-style-type: none;
+			margin-left: -30px;
+			font: {
+				size: 11px;
+				color: #e6e6e6;
+			}
+		}
+	}
+}
+
+}

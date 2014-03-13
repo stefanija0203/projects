@@ -1,0 +1,221 @@
+$column: 70px;
+$gutter: 20px;
+$grid-columns: 12;
+$max-width: 1060px;
+
+@mixin head {
+	@include span-columns(4);
+	height: 10px;
+	background-color: #e2e2e2;
+	margin-top: 5px;
+}
+
+@mixin ftitle {
+	height: 25px;
+	background-color: #000000;
+	margin-top: 60px;
+}
+
+@mixin blue {
+	@include span-columns(2 of 8);
+	height: 45px;
+	background-color: #292929;
+	margin-top: 30px;
+}
+
+.urbanspoon {
+	background-color: #ffffff;	
+
+	.header {
+		.conthead {
+			@include outer-container;
+			margin-top: 30px;
+			margin-bottom: 30px;
+			.head1 {
+				@include span-columns(4);
+				height: 20px;
+				background-color: #ff0000;
+			}
+			.head2 {
+				@include head;
+			}
+			.head3 {
+				@include head;
+			}
+		}
+	}
+
+	.picture {
+		height: 450px;
+		background-color: #141f1f;
+		.h1cont {
+			@include outer-container;
+			.h1	{
+				@include span-columns(8);
+				@include shift(2);
+				background-color: #ffffff;
+				height: 40px;
+				margin-top: 130px;
+			}
+		}
+		.h2cont {
+			@include outer-container;
+			.h2	{
+				@include span-columns(6);
+				@include shift(3);
+				height: 20px;
+				background-color: #ffffff;
+				margin-top: 20px;
+			}
+		}
+		.btncont {
+			@include outer-container;
+			.btn {
+				@include span-columns(2);
+				@include shift(5);
+				height: 40px;
+				background-color: #ff0000;
+				margin-top: 35px;
+			}
+		}
+	}
+
+	.first {
+		@include outer-container;
+		.fir1 {
+			@include span-columns(3);
+			.fir1title {
+				@include ftitle;
+			}
+			.fir1body {
+				height: 350px;
+				background-color: #cccccc;
+				margin-top: 45px;
+			}
+		}
+		.fir2 {
+			@include span-columns(9);
+			.fir2title1 {
+				@include span-columns(4 of 9);
+				@include ftitle;
+			}
+			.fir2title2 {
+				@include span-columns(6 of 9);
+				height: 10px;
+				background-color: #9d9f9f;
+				margin-top: 10px;
+			}
+			.firstbox{
+				@include outer-container;
+				.first1 {
+					@include span-columns(3 of 9);
+					margin-top: 35px;
+					height: 340px;
+					background-color: #e6e7e7;
+					.pic {
+						height: 220px;
+						background-color: #19A319;
+					}
+					.ftitle1 {
+						@include size(200px 20px);
+						background-color: #999999;
+						margin: 15px 23px;
+					}
+					.ftitle2 {
+						@include size(160px 10px);
+						background-color: #b2b2b2;
+						margin-left: 43px;
+					}
+					.btn1 {
+						@include size(140px 40px);
+						background-color: #ff0000;
+						float: left;
+						margin-top: 20px;
+					}
+					.btn2 {
+						@include size(90px 40px);
+						background-color: #333333;
+						float: right;
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	.blue {
+		height: 450px;
+		background-color: #006699;
+		margin-top: 50px;
+		.bluecont {
+			@include outer-container;
+			.left {
+				@include span-columns(8);
+				.l1 {
+					@include span-columns(7 of 8);
+					height: 35px;
+					background-color: #ffffff;
+					margin-top: 220px;
+				}
+				.l2 {
+					@include span-columns(6 of 8);
+					height: 20px;
+					background-color: #ffffff;
+					margin-top: 20px;
+				}
+				.l3 {
+					@include outer-container;
+						.l31 {
+							@include blue;
+						}
+						.l32 {
+							@include blue;
+						}
+					}
+				}
+			}
+			.right {
+				@include span-columns(4);
+				.white {
+					height: 350px;
+					background-color: #ffffff;
+					margin-top: 100px;	
+					padding: 70px 30px 0 30px;
+					.wred {
+						height: 280px;
+						background-color: #ff0000;
+					}
+				}
+			}
+		}
+	}
+
+	.contsec1 {
+		@include outer-container;
+		.sec1 {
+			@include span-columns(5);
+			.sectitle1 {
+				height: 30px;
+				background-color: #000000;
+				margin: 50px 40px 0px 0px;
+			}
+			.sectitle2 {
+				height: 10px;
+				background-color: #8f8f8f;
+				margin: 10px 80px 0px 0px;
+			}
+		}
+		.sec2 {
+			@include span-columns(7);
+			.sec2title1{
+				@include size(200px 30px);
+				background-color: #ff0000;
+				margin-top: 50px;
+			}
+			.sec2title2{
+				@include size(220px 10px);
+				background-color: #ff6666;
+				margin-top: 10px
+			}
+		}
+	}
