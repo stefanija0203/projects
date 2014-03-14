@@ -16,11 +16,67 @@ $max-width: 1060px;
 	margin-top: 60px;
 }
 
+@mixin stitle {
+	height: 10px;
+	background-color: #9d9f9f;
+	margin-top: 10px;
+}
+
 @mixin blue {
 	@include span-columns(2 of 8);
 	height: 45px;
 	background-color: #292929;
 	margin-top: 30px;
+}
+
+@mixin block {
+	margin-top: 35px;
+	height: 340px;
+	background-color: #e6e7e7;
+}
+
+@mixin bl{
+	.pic {
+		height: 220px;
+		background-color: #19A319;
+	}
+	.ftitle1 {
+		@include size(200px 20px);
+		background-color: #999999;
+		margin: 15px 23px;
+	}
+	.ftitle2 {
+		@include size(160px 10px);
+		background-color: #b2b2b2;
+		margin-left: 43px;
+	}
+	.btn1 {
+		@include size(140px 40px);
+		background-color: #ff0000;
+		float: left;
+		margin-top: 20px;
+	}
+	.btn2 {
+		@include size(90px 40px);
+		background-color: #333333;
+		float: right;
+		margin-top: 20px;
+	}
+}
+
+@mixin drop {
+	@include span-columns(4);
+	height: 40px;
+	background-color: #000000;
+	margin-top: 50px;
+}
+
+@mixin icon {
+		@include span-columns(2);
+		@include shift(5);
+		background-color: #000000;
+		height: 40px;
+		margin-top: 70px;
 }
 
 .urbanspoon {
@@ -101,43 +157,14 @@ $max-width: 1060px;
 			}
 			.fir2title2 {
 				@include span-columns(6 of 9);
-				height: 10px;
-				background-color: #9d9f9f;
-				margin-top: 10px;
-			}
+				@include stitle;
+				}
 			.firstbox{
 				@include outer-container;
 				.first1 {
 					@include span-columns(3 of 9);
-					margin-top: 35px;
-					height: 340px;
-					background-color: #e6e7e7;
-					.pic {
-						height: 220px;
-						background-color: #19A319;
-					}
-					.ftitle1 {
-						@include size(200px 20px);
-						background-color: #999999;
-						margin: 15px 23px;
-					}
-					.ftitle2 {
-						@include size(160px 10px);
-						background-color: #b2b2b2;
-						margin-left: 43px;
-					}
-					.btn1 {
-						@include size(140px 40px);
-						background-color: #ff0000;
-						float: left;
-						margin-top: 20px;
-					}
-					.btn2 {
-						@include size(90px 40px);
-						background-color: #333333;
-						float: right;
-						margin-top: 20px;
-					}
+					@include block;
+					@include bl;
 				}
 			}
 		}
@@ -190,32 +217,205 @@ $max-width: 1060px;
 		}
 	}
 
-	.contsec1 {
+	.sectitle {
 		@include outer-container;
-		.sec1 {
+		.sectitle1 {
+			@include ftitle;
+			width: 250px;
+		}
+		.sectitle2 {
+			@include stitle;
+			width: 280px;
+		}
+	}
+
+	.second {
+		@include outer-container;
+		.sec {
+			@include span-columns(3);
+			@include block;
+			@include bl;
+		}
+	}
+
+	.gray {
+		height: 450px;
+		margin-top: 50px;
+		background-color: #cfcfcf;
+		.graycont {
+			@include outer-container;
+			.graycont1 {
+				@include span-columns(6);
+				@include shift (3);
+				height: 30px;
+				background-color: #ffffff;
+				margin-top: 80px;
+			}
+			.graycont2 {
+				@include span-columns(4);
+				@include shift (4);
+				height: 15px;
+				background-color: #ffffff;
+				margin-top: 20px;
+			}
+			.graycont3 {
+				@include span-columns(8);
+				@include shift (2);
+				height: 130px;
+				background-color: #ffffff;
+				margin-top: 30px;
+			}
+			.graycont4 {
+				@include span-columns(6);
+				@include shift (3);
+				margin-top: 30px;
+				.graybtn1 {
+					@include span-columns(3 of 6);
+					height: 25px;
+					background-color: #000000;
+				}
+				.graybtn2 {
+					@include span-columns(3 of 6);
+					height: 25px;
+					background-color: #ff0000;
+				}
+			}
+		}
+	}
+
+	.thirdcont {
+		@include outer-container;
+		.third1 {
 			@include span-columns(5);
-			.sectitle1 {
+			.thirdtitle1 {
 				height: 30px;
 				background-color: #000000;
 				margin: 50px 40px 0px 0px;
 			}
-			.sectitle2 {
+			.thirdtitle2 {
 				height: 10px;
 				background-color: #8f8f8f;
 				margin: 10px 80px 0px 0px;
 			}
 		}
-		.sec2 {
+		.third2 {
 			@include span-columns(7);
-			.sec2title1{
+			.third2title1{
 				@include size(200px 30px);
 				background-color: #ff0000;
 				margin-top: 50px;
 			}
-			.sec2title2{
+			.third2title2{
 				@include size(220px 10px);
 				background-color: #ff6666;
 				margin-top: 10px
 			}
 		}
 	}
+
+	.third {
+		@include outer-container;
+		margin-top: 50px;
+		.third5 {
+			@include span-columns(5);
+			.third51 {
+				@include span-columns(6);
+				background-color: #cccccc;
+				height: 120px;
+			}
+			.third52 {
+				@include span-columns(6);
+				height: 300px;
+				background-color: #cccccc;
+			}
+		}
+		.thcont {
+			@include span-columns(7);
+			.third4 {
+				@include span-columns(8);
+				background-color: #19A319;
+				height: 300px;
+			}
+			.third3 {
+				@include span-columns(4);
+				background-color: #e8e8e8;
+				height: 300px;
+					.ftitle1 {
+						@include size(170px 20px);
+						background-color: #999999;
+						margin: 10px 11px;
+					}
+					.ftitle2 {
+						@include size(140px 10px);
+						background-color: #b2b2b2;
+						margin-left: 26px;
+					}
+					.btn1 {
+						@include size(110px 35px);
+						background-color: #ff0000;
+						float: left;
+						margin-top: 20px;
+					}
+					.btn2 {
+						@include size(70px 35px);
+						background-color: #333333;
+						float: right;
+						margin-top: 20px;
+					}
+					.pic {
+						height: 180px;
+						background-color: #c7c7c7;
+						margin-top: 70px;
+					}
+				}
+			}
+		}
+	
+
+	.red {
+		height: 450px;
+		margin-top: 50px;
+		background-color: #ff0000;
+		.redcont {
+			@include outer-container;
+			.redtitle1 {
+				@include span-columns(8);
+				@include shift(2);
+				height: 35px;
+				background-color: #ffffff;
+				margin-top: 70px;
+			}
+			.redtitle2 {
+				@include span-columns(6);
+				@include shift(3);
+				height: 20px;
+				background-color: #ffffff;
+				margin-top: 20px;
+			}
+			.drop{
+				@include outer-container;
+				.drop1 {
+					@include drop;
+					.icon {
+						@include icon;
+					}
+				}
+				.dropw {
+					@include drop;
+					background-color: #ffffff;
+					.iconw {
+						@include icon;
+						background-color: #ffffff;
+					}
+				}
+			}
+			.shake {
+				@include span-columns(2);
+				@include shift(5);
+				height: 40px;
+				background-color: #000000;
+				margin-top: 110px;
+			}
+		}
+	}
+
