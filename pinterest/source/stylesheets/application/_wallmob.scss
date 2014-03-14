@@ -1,4 +1,437 @@
-$column: 70px;
+$column: 60px;
 $gutter: 20px;
 $grid-columns: 12;
-$max-width: 1060px;
+$max-width: 960px;
+
+@mixin pic {
+	@include span-columns(5);
+	height: 180px;
+	background-color: #b2b2b2;
+}
+
+@mixin int4 {
+	@include span-columns(1);
+	@include shift(2);
+	height: 50px;
+	background-color: #0000ff;
+}
+
+@mixin foot2{
+	@include span-columns(2);
+	@include shift(2);
+	height: 20px;
+	background-color: #ffffff;
+	margin-top: 40px;
+}
+
+.wallmob {
+	background-color: #ffffff;
+	width: 1260px;
+
+	.enterprise {
+		height: 450px;
+		background-color: #b2b2b2;
+		.enterprisecont {
+			@include outer-container;
+			.entertitle1 {
+				@include size(250px 40px);
+				background-color: #ffffff;
+				margin-top: 120px;
+			}
+			.entertitle2 {
+				@include size(280px 40px);
+				background-color: #ffffff;
+				margin-top: 10px;
+			}
+			.enterbtn {
+				@include size(120px 35px);
+				background-color: #0000ff;
+				margin-top: 30px;
+			}
+			.enterlearn {
+				@include size(90px 20px);
+				background-color: #ffffff;
+				margin-top: 120px;
+			}
+		}
+	}
+
+	.intelligent {
+		@include outer-container;
+		margin-top: 50px;
+		.int1 {
+			@include outer-container;
+			.pic1 {
+				@include pic;
+			}
+			.text1 {
+				@include span-columns(7);
+				padding-left: 20px;
+				.title11 {
+					@include size(350px 40px);
+					background-color: #333333;
+					margin-top: 10px;
+				}
+				.title12 {
+					@include size(70px 40px);
+					background-color: #333333;
+					margin-top: 15px;
+				}
+				.text1l1 {
+					@include size(350px 30px);
+					background-color: #cccccc;
+					margin-top: 30px;
+				}
+			}
+		}
+		.int2 {
+			@include outer-container;
+			margin-top: 40px;
+			.text2 {
+				@include span-columns(5);
+				.title2 {
+					@include size(100px 40px);
+					background-color: #333333;
+					margin-top: 10px;
+				}
+				.line2 {
+					@include size(300px 45px);
+					background-color: #cccccc;
+					margin-top: 40px;
+				}
+				.retail {
+					@include size(100px 10px);
+					background-color: #0000ff;
+					margin-top: 30px;
+				}
+			}
+			.pic2 {
+				@include span-columns(7);
+				height: 180px;
+				background-color: #b2b2b2;
+			}
+		}
+		.int3 {
+			@include outer-container;
+			margin-top: 40px;
+			.pic3 {
+				@include pic;
+				@include span-columns(6);
+			}
+			.text3 {
+				@include span-columns(6);
+				.title3 {
+					@include size(150px 40px);
+					background-color: #333333;
+					margin: 10px 0 0 300px;
+				}
+				.line3 {
+					@include size(300px 45px);
+					background-color: #cccccc;
+					margin: 40px 0 0 150px;
+				}
+				.entsol {
+					@include size(110px 10px);
+					background-color: #0000ff;
+					margin: 30px 0 0 340px;
+				}
+			}
+		}
+		.int4 {
+			margin-top: 40px;
+			.sale {
+				@include int4;
+				@include shift(1);
+			}
+			.mobile {
+				@include int4;
+			}
+			.wallet {
+				@include int4;
+			}
+			.ecomm {
+				@include int4;
+			}
+		}
+	}
+
+	.point {
+		height: 450px;
+		background-color: #ebebeb;
+		margin-top: 50px;
+		.pointcont {
+			@include outer-container;
+			.pos {
+				@include span-columns(5);
+				float: right;
+				margin-top: 75px;
+				.titlepoint {
+					height: 40px;
+					background-color: #333333;
+				}
+				.par {
+					@include outer-container;
+					margin: 40px 0;
+					.pblue {
+						@include span-columns(2);
+						height: 50px;
+						background-color: #0000ff;
+						float: left;
+					}
+					.ptitle {
+						@include span-columns(10);
+						@include omega();
+						height: 15px;
+						background-color: #333333;
+					}
+					.pline {
+						@include span-columns(10);
+						height: 30px;
+						background-color: #cccccc;
+					}
+
+				}
+			}
+		}
+	}
+	.pointcont2 {
+		@include outer-container;
+		margin-top: 50px;
+		.mps {
+			@include span-columns(6);
+			.mpstitle1 {
+				@include size(300px 40px);
+				background-color: #333333;
+				margin-top: 10px;
+			}
+			.mpstitle2 {
+				@include size(200px 40px);
+				background-color: #333333;
+				margin-top: 10px;
+			}
+			.mpsline {
+				@include size(350px 100px);
+				background-color: #cccccc;
+				margin-top: 90px;
+			}
+			}
+		.video {
+			@include span-columns(6);
+			height: 300px;
+			background-color: #b2b2b2;
+		}
+	}
+
+	.dashboard {
+		height: 450px;
+		background-color: #b2b2b2;
+		margin-top: 50px;
+		.dashcont {
+			@include outer-container;
+			.dashtitle {
+				@include size(350px 40px);
+				background-color: #333333;
+				margin-top: 50px;
+			}
+			.dashline {
+				@include size(370px 70px);
+				background-color: #cccccc;
+				margin-top: 30px;
+			}
+		}
+	}
+	
+
+	.payment {
+		margin-top: 50px;
+		height: 450px;
+		.pay1 {
+			@include size(250px 400px);
+			background-color: #2e2e2e;
+		}
+		.pay2 {
+			@include size(150px 250px);
+			background-color: #2e2e2e;
+			margin-top: 0px;
+			float: right;
+			margin: -250px 120px 0 0;
+		}
+		.paycont {
+			@include outer-container;
+			.paytitle {
+				@include span-columns(4);
+				@include shift(4);
+				height: 40px;
+				background-color: #333333;
+				margin-top: -340px;
+			}
+			.payline {
+				@include span-columns(6);
+				@include shift(3);
+				height: 90px;
+				background-color: #cccccc;
+				margin-top: -250px;
+			}
+			.payvideo {
+				@include span-columns(2);
+				@include shift(5);
+				height: 70px;
+				background-color: #b2b2b2;
+				margin-top: -120px;
+			}
+		}
+	}
+
+	.info {
+		height: 300px;
+		background-color: #b2b2b2;
+		margin-top: -50px;
+			@include outer-container;
+				.field {
+					@include span-columns(5);
+					.field1 {
+						height: 40px;
+						background-color: #ffffff;
+						margin-top: 100px;
+					}
+					.field2 {
+						height: 40px;
+						background-color: #0000ff;
+						margin-top: 20px;
+					}
+				}
+				.infopic {
+					@include span-columns(6);
+					@include shift(1);
+					height: 200px;
+					background-color: #333333;
+					margin-top: 50px;
+				}
+			}
+		}
+	
+
+	.backoffice {
+		.backblue {
+			height: 80px;
+			background-color: #0000ff;
+			margin-top: 500px;
+		}
+		.backcont {
+			@include outer-container;
+			margin-top: -500px;
+			.back {
+				@include span-columns(8);
+				@include shift(2);
+				.backtitle {
+					@include span-columns(10);
+					@include shift(1);
+					height: 50px;
+					background-color: #333333;
+				}
+				.backline {
+					@include span-columns(8);
+					@include shift(2);
+					height: 80px;
+					background-color: #cccccc;
+					margin-top: 50px;
+				}
+				.backtab {
+					@include span-columns(12);
+					height: 450px;
+					background-color: #b2b2b2;
+					margin-top: 50px;
+				}
+				.explore {
+					@include span-columns(4);
+					@include shift(4);
+					height: 15px;
+					background-color: #0000ff;
+					margin-top: 30px;
+
+				}
+			}
+		}
+	}
+
+	.solution {
+		height: 450px;
+		background-color: #b2b2b2;
+		margin-top:80px;
+		.solcont {
+			@include outer-container;
+			.soltitle {
+				@include span-columns(6);
+				@include shift(3);
+				height: 40px;
+				background-color: #333333;
+				margin-top: 70px;
+			}
+			.solline {
+				@include span-columns(4);
+				@include shift(4);
+				height: 10px;
+				background-color: #cccccc;
+				margin-top: 30px;
+			}
+			.solpic {
+				@include span-columns(10);
+				@include shift(1);
+				height: 200px;
+				background-color: #333333;
+				margin-top: 40px;
+			}
+		}
+	}
+
+	.clients {
+		height: 300px;
+		.clcont {
+			@include outer-container;
+			.cltitle {
+				@include span-columns(6);
+				@include shift(3);
+				height: 40px;
+				background-color: #333333;
+				margin-top: 70px;
+			}
+		}
+		.clline {
+			height: 60px;
+			background-color: #e6e6e6;
+			margin-top: 50px;
+		}
+	}
+
+	.footer1 {
+		height: 400px;
+		background-color: #4c4c4c;
+		.foot1cont {
+			@include outer-container;
+			.col {
+				@include span-columns(3);
+				height: 300px;
+				background-color: #ffffff;
+				margin-top: 50px;
+			}
+		}
+	}
+
+	.footer2 {
+		height: 100px;
+		background-color: #333333;
+		.foot2cont {
+			@include outer-container;
+			.col1 {
+				@include foot2;
+				@include shift(1);
+			}
+			.col2 {
+				@include foot2;
+			}
+			.col3 {
+				@include foot2;
+			}
+		}
+	}
+
