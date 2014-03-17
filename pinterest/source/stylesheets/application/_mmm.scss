@@ -1,0 +1,196 @@
+$column: 60px;
+$gutter: 20px;
+$grid-columns: 12;
+$max-width: 960px;
+
+@mixin header {
+	background-color: #000000;
+	margin: 40px 0px 0px 60px;
+}
+
+@mixin red {
+	@include size(20px 5px);
+	background-color: #ff0000;
+}
+
+@mixin view {
+	@include size(50px 15px);
+	background-color: #ff0000;
+}
+
+@mixin fr{
+	@include size(70px 15px);
+	background-color: #000000;
+	margin: 30px;
+}
+
+@mixin featured {
+	@include span-columns(6);
+	.pic {
+		height: 200px;
+		background-color: #009900;
+	}
+	.white {
+		height: 90px;
+		background-color: #ffffff;
+	}
+	.titlefeat {
+		@include size(300px 25px);
+		background-color: #ffffff;
+		margin: -230px 0px 0px 30px;
+		}
+	.red {
+		@include red;
+		margin-left: 30px;
+	}
+	.blackfeat {
+		@include size(400px 15px);
+		background-color: #333333;
+		margin: 80px 0px 0px 30px;
+	}
+	.view {
+		@include view;
+		margin: 30px;
+	}
+}
+
+.mmm {
+	width: 1260px;
+
+	.header {
+		background-color: #ffffff;
+		height: 100px;
+		.headcont {
+			@include outer-container;
+			.logo {
+				@include size(40px 30px);
+				background-color: #ff0000;
+				margin-top: 20px;
+				float: left;
+			}
+			.firstline {
+				@include size(320px 10px);	 
+				@include header;
+			}
+			.secline {
+				@include size(370px 10px);
+				@include header;
+				margin-top: 20px;
+			}
+		}
+	}
+
+	.innovation {
+		height: 400px;
+		background-color: #4c4c4c;
+		.inncont {
+			@include outer-container;
+			.inn {
+				@include size(300px 35px);
+				background-color: #ffffff;
+				margin-top: 100px;
+			}
+			.stories {
+				@include size(220px 35px);
+				background-color: #ffffff;	
+				margin-top: 10px;		
+			}
+			.litlered {
+				@include red;
+				margin-top: 10px;
+			}
+			.text {
+				@include size(330px 70px);
+				background-color: #666666;
+				margin-top: 20px;
+			}
+		}
+	}
+
+	.featured {
+		@include outer-container;
+		.feat {
+			@include fr;
+		}
+		.hope {
+			@include featured;
+		}
+		.afar {
+			@include featured;
+			.pic {
+				background-color: #000066;
+			}
+		}
+	}
+
+	.recent {
+		@include outer-container;
+		.most {
+			@include fr;
+		}
+		.box {
+			@include span-columns(3);
+			@include omega(4n);
+			.bpic {
+				height: 130px;
+				background-color: #1a1a1a;
+			}
+			.bwhite {
+				height: 200px;
+				background-color: #ffffff;
+			}
+			.btitle {
+				@include size(120px 20px);
+				background-color: #000000;
+				margin: -180px 0px 0px 20px;
+			}
+			.bred {
+				@include red;
+				margin: 15px 0px 0px 20px;
+			}
+			.btext {
+				@include size(150px 40px);
+				background-color: #333333;
+				margin: 15px 0px 0px 20px;
+			}
+			.bview {
+				@include view;
+				margin: 50px 0px 50px 20px;
+			}
+		}
+	}
+
+	.footer {
+		height: 150px;
+		background-color: #ffffff;
+		.tw {
+			@include outer-container;
+			.tw1 {
+				@include span-columns(4);
+				@include shift(4);
+				height: 25px;
+				margin-top: 40px;
+				background-color: #b2b2b2;
+			}
+		}
+		.foot {
+			@include outer-container;
+			.foot1 {
+				@include size(650px 10px);
+				background-color: #999999;
+				margin-top: 40px;
+			}
+			.foot2 {
+				@include size(150px 10px);
+				background-color: #999999;
+				margin-top: 10px;
+			}
+			.foot3 {
+				@include size(150px 10px);
+				background-color: #999999;
+				float: right;
+				margin-top: -10px;
+			}
+		}
+	}
+}
