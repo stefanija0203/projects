@@ -1,0 +1,110 @@
+$column: 35px;
+$gutter: 5px;
+$grid-columns: 12;
+$max-width: 480px;
+$tamna: #33444e;
+$svetla: #768791;
+
+@mixin in {
+	.left-inner-addon {
+    position: relative;
+	input {
+	    padding-left: 70px; 
+		background-color: $tamna;
+		font-weight: bold;
+	    border-right: 1px solid $svetla;
+	    color: $svetla;
+	    border-color: $svetla;
+	}
+	i {
+	    position: absolute;
+	    padding: 10px 12px;
+		margin: 16px 0px 0px 5px;
+	    pointer-events: none;
+	    border-right: 1px solid $svetla;
+	    color: $svetla;
+	}
+	}
+}
+
+.form3 {
+	background-color: #212a2f;
+}
+
+.formthree {
+	@include outer-container;
+	background-color: $tamna;
+	border-radius: 5px;
+	padding: 25px;
+	margin-top: 100px;
+	.first {
+		@include outer-container;
+		margin-top: 10px;
+		.login{
+			@include span-columns(5);
+			color: #ffffff;
+			font: {
+				size: 24px;
+				weight: bold;
+			}
+		}
+		.or {
+			@include span-columns(1);
+			color: $svetla;
+			margin-left: 90px;
+			font: {
+				size: 18px;
+				weight: bold;
+				style: italic;
+			}
+		}
+		.register {
+			float: right;
+			a {
+				color: #31a0dd;
+				text-decoration: underline;
+				font: {
+					size: 18px;
+					weight: bold;
+				}
+			}
+		}
+	}
+	.in1 {
+		margin-top: 20px;
+		@include in;
+		i {
+			margin: 17px 0px 0px 5px;
+			width: 46px;
+		}
+	}
+	.in2 {
+		@include in;
+		i {
+		}		
+	}
+	.sec {
+		margin-top: 20px;
+		label {
+			@include span-columns(2);
+			margin: 7px 0px 0px 15px;
+			input {
+				@include size(25px 25px);
+			}
+		}
+		.pass {
+			@include span-columns(5);
+			color: $svetla;
+			margin-top: 10px;
+		}
+		button {
+			@include size(85px 35px);
+			@include linear-gradient(#6ab4e0, #0377b9);
+			color: #ffffff;
+			font-size: 16px;
+			border-radius: 2px;
+			float: right;
+			border-style: none;
+		}
+	}
+}

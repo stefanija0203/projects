@@ -1,0 +1,123 @@
+$column: 35px;
+$gutter: 5px;
+$grid-columns: 12;
+$max-width: 480px;
+$or: #b8bcb8;
+
+@mixin button {
+	@include span-columns(6);
+	border-radius: 3px;
+	height: 35px;
+	border-style: none;
+	color: #ffffff;
+}
+
+@mixin in {
+	.left-inner-addon {
+	    position: relative;
+	}
+	input {
+	    padding-left: 35px;
+	    background-color: #dedede;
+	    border: 2px solid $or;
+	    height: 44px;
+	}
+	i {
+	    position: absolute;
+	    padding: 10px 12px;
+	    pointer-events: none;
+	    border-left: 2px solid $or;
+	    color: #7A7A7A;
+	}
+}
+
+
+.form4 {
+	background-size: 1333px 1000px;
+	background-image: url('../images/pr1.jpg');
+}
+
+.formfour {
+	.formcont {
+		@include outer-container;
+		margin-top: 50px;
+		padding: 25px;
+		.face {
+			@include button;
+			@include linear-gradient(#0d72b9 0%, #0d62aa 100%);
+		}
+		.twit {
+			@include button;
+			@include omega();
+			@include linear-gradient(#48cefa 0%, #17aee1 100%);
+		}
+		.or {
+			@include outer-container;
+			.line {
+				@include size(200px 2px);
+				background-color: $or;
+				margin: 60px 0px 0px 115px;
+			}
+			.circle {
+				@include size(50px 50px);
+				background-color: $or;
+				border-radius: 25px;
+				margin: -26px 0px 0px 190px;
+			}
+			.p {
+				margin: -34px 0px 0px 206px;
+				color: #7a7a7a;
+				font-weight: bold;
+			}
+		}
+		form {
+			.in1 {
+				margin-top: 40px;
+				@include in;
+				i {
+					margin: -51px 0px 0px 384px;
+					width: 46px;
+				}
+			}
+			.in2 {
+				@include in;
+				i {
+					margin: 12px 0px 0px 383px;
+				}
+			}
+			.text {
+				@include outer-container;
+				margin-top: 20px;
+				color: #ffffff;
+				font-weight: bold;
+				label {
+					@include span-columns(1);
+					.check{
+						@include size(20px 20px);
+						margin-top: -2px;
+					}
+				}
+				.remember {
+					@include span-columns(4);
+					margin-left: -10px;
+				}
+				.forgot {
+					@include size(180px 30px);
+					float: right;
+				}
+			}
+			.login {
+				@include size(430px 44px);
+				@include linear-gradient(#234b73 0%, #2a527d 100%);
+				border: 2px solid #135ba0;
+				border-radius: 5px;
+				margin-top: 15px;
+				color: #ffffff;
+				font: {
+					weight: bold;
+					size: 18px;
+				}
+			}
+		}
+	}
+}

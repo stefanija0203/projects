@@ -1,0 +1,69 @@
+$column: 25px;
+$gutter: 5px;
+$grid-columns: 12;
+$max-width: 360px;
+
+.form1{
+	@include linear-gradient(-30deg, #1d93ab 0%, #66ace7 40%, #002f57 100%);
+}
+
+.formone {
+	font-family: helvetica;
+	.formcont {
+		@include outer-container;
+		background-color: #ffffff;
+		border-radius: 5px;
+		margin-top: 70px;
+		.form-control {
+			border: 3px solid #e6e6e6;
+		}
+		img {
+			@include size(100px 100px);
+			margin: 35px 0px 0px 130px;
+		}
+		.mem {
+			font-size: 22px;
+			text-align: center;
+			margin-top: 15px;
+		}
+		.acc {
+			font-size: 18px;
+			color: #666666;
+			text-align: center;
+			margin-top: -45px;	
+			}
+		}
+		.form {
+			@include outer-container;
+			margin: 10px 40px;
+			border-bottom: 3px solid #e6e6e6;
+			.group {
+				margin: 30px 0px;
+				.checkbox {
+					.check {
+						@include size(25px 25px);
+					}
+					input {
+						vertical-align: middle;
+					}
+				}
+				.green {
+					@include size(90px 40px);
+					background-color: #28bf4c;
+					border-radius: 5px;
+					float: right;
+					color: #ffffff;
+					margin-top: -10px;
+				}
+			}
+		}
+		.blue {
+			@include size(280px 40px);
+			background-color: #5674d5;
+			border-radius: 5px;
+			color: #ffffff;
+			margin: 25px 40px 35px 40px;
+		}
+	}
+
+
