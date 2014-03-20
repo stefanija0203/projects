@@ -91,6 +91,7 @@ $max-width: 420px;
 			button {
 				@include size(340px 50px);
 				background-color: #329e91;
+				border-style: none;
 				border-radius: 5px;
 				color: #ffffff;
 				margin: 40px 0px;

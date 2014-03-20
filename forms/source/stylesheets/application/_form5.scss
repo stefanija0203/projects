@@ -1,0 +1,122 @@
+$column: 25px;
+$gutter: 5px;
+$grid-columns: 12;
+$max-width: 360px;
+
+@mixin in {
+	.left-inner-addon {
+	    position: relative;
+		input {
+		    padding-left: 40px; 
+		    background-color: #e6e7eb;
+		    height: 44px;
+		    font-size: 14px;
+		    border-radius: 3px;
+		}
+		i {
+		    position: absolute;
+		    padding: 10px 12px;
+		    pointer-events: none;
+		    color: #999999;
+		}
+	}
+}
+
+
+.form5 {
+	background-color: #4f535c;
+}
+
+.formfive {
+	.formcont{
+		@include outer-container;
+		margin-top: 150px;
+		background-color: #f1f2f4;
+		border-radius: 3px;
+		padding: 25px;
+		.first {
+			@include span-columns(4);
+			@include shift(4);
+			.gray {
+				@include size(55px 70px);
+				background-color: #e6e6e6;
+				border: 1px solid #999999;
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+				border-top: 3px solid #b2b2b2;
+				opacity: .6;
+				margin-left: 20px;
+				margin-top: -80px;
+			}
+			.line {
+				@include span-columns(4 of 4);
+				height: 4px;
+				background-color: #000000;
+				border-radius: 2px;
+
+			}
+			.circle {
+				@include size(15px 15px);
+				background-color: #333333;
+				border-radius: 7px;
+				border: 3px solid #cccccc;
+				margin: -40px 0px 0px 40px;
+			}
+		}
+		.start {
+			@include span-columns(12);
+			text-align: center;
+			margin-top: 20px;
+			font: {
+				size: 22px;
+				weight: bold;
+			}
+		}
+		.experience {
+			@include span-columns(12);
+			text-align: center;
+			margin-bottom: 20px;
+			color: #b2b2b2;
+			font: {
+				size: 14px;
+				weight: bold;
+			}
+		}
+		form {
+			.in1 {
+				@include in;
+				input {
+					border-bottom-left-radius: 0px;
+					border-bottom-right-radius: 0px;
+				}
+				i {
+					margin-top: 92px;
+				}
+			}
+			.in2 {
+				@include in;
+				margin-top: -20px;
+				input {
+					border-top-left-radius: 0px;
+					border-top-right-radius: 0px;
+				}
+				i {
+					margin-top: 10px;
+				}
+			}
+			.login {
+				@include span-columns(12);
+				height: 44px;
+				margin-top: 15px;
+				border-radius: 4px;
+				border-style: none;
+				@include linear-gradient(#6bd0c5, #41b2a0);
+				color: #ffffff;
+				font: {
+					size: 20px;
+					weight: bold;
+				}
+			}
+		}
+	}
+}

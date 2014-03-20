@@ -4,26 +4,33 @@ $grid-columns: 12;
 $max-width: 480px;
 $tamna: #33444e;
 $svetla: #768791;
+$plava: #007ffe;
+
+input:focus::-webkit-input-placeholder {
+    color: $plava;
+}
 
 @mixin in {
 	.left-inner-addon {
-    position: relative;
-	input {
-	    padding-left: 70px; 
-		background-color: $tamna;
-		font-weight: bold;
-	    border-right: 1px solid $svetla;
-	    color: $svetla;
-	    border-color: $svetla;
-	}
-	i {
-	    position: absolute;
-	    padding: 10px 12px;
-		margin: 16px 0px 0px 5px;
-	    pointer-events: none;
-	    border-right: 1px solid $svetla;
-	    color: $svetla;
-	}
+	    position: relative;
+		input {
+		    padding-left: 70px; 
+			background-color: $tamna;
+			font-weight: bold;
+		    border-color: $svetla;
+    		&:focus {
+				border: 3px solid $plava;
+				font-weight: bold;			
+			}
+		}
+		i {
+		    position: absolute;
+		    padding: 10px 12px;
+			margin: 16px 0px 0px 5px;
+		    pointer-events: none;
+		    border-right: 1px solid $svetla;
+		    color: $svetla;
+		}
 	}
 }
 

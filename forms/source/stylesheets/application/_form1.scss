@@ -50,6 +50,7 @@ $max-width: 360px;
 				.green {
 					@include size(90px 40px);
 					background-color: #28bf4c;
+					border-style: none;
 					border-radius: 5px;
 					float: right;
 					color: #ffffff;
@@ -60,6 +61,7 @@ $max-width: 360px;
 		.blue {
 			@include size(280px 40px);
 			background-color: #5674d5;
+			border-style: none;
 			border-radius: 5px;
 			color: #ffffff;
 			margin: 25px 40px 35px 40px;

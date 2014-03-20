@@ -1,0 +1,140 @@
+$column: 20px;
+$gutter: 5px;
+$grid-columns: 12;
+$max-width: 300px;
+$wh: #ffffff;
+
+@mixin part {
+	.header {
+		@include span-columns(10);
+		@include shift(2);
+		font-size: 10px;
+		color: #c3c3c2;
+	}
+	.circle {
+		@include span-columns(2);
+		@include size(40px 40px);
+		border-radius: 20px;
+		i {
+			color: $wh;
+		}
+	}
+	.white {
+		@include span-columns(10);
+		@include omega();
+		background-color: $wh;
+		.title {
+			@include span-columns(6 of 10);
+			font: {
+				size: 18px;
+				weight: bold;
+			}
+		}
+		.amount {
+			@include span-columns(4 of 10);
+			@include omega();
+			text-align: right;
+			font-size: 18px;
+		}
+		.line {
+			font-size: 10px;
+		}
+	}
+}
+
+.tink1 {
+	.tinkcont {
+		@include outer-container;
+		.first {
+			background-color: $wh;
+			.overview {
+				padding: 10px;
+				height: 50px;
+				background-color: $wh;
+				opacity: .9;
+				.over {
+					text-align: center;
+					font: {
+						size: 22px;
+						weight: bold;
+					}
+				}
+				.menu {
+					@include span-columns(2);
+					float: right;
+					margin-top: -20px;
+					.minus {
+						@include size(25px 3px);
+						background-color: #70d9d0;
+						border-radius: 2px;
+						margin-top: 3px;
+						float: right;
+
+					}
+				}
+			}
+			.expenses {
+				.blue {
+					@include size(280px 280px);
+					border-radius: 140px;
+					background-color: #1fa9e2;
+					margin:-40px 0px 0px 10px; 
+				}
+				.white {
+					@include size(120px 120px);
+					border-radius: 60px;
+					background-color: $wh;
+					margin:-200px 0px 0px 90px; 
+				}
+				.text {
+					margin-top: -90px;
+					text-align: center;
+					.text1 {
+						font-size: 10px;
+					}
+					.text2 {
+						font-size: 32px;
+					}
+					.text3 {
+						font-size: 10px;
+					}
+				}
+			}
+			.bl {
+				@include span-columns(6);
+				@include pad();
+				opacity: .8;
+				margin-top: 60px;
+				text-align: center;
+				background-color: #000000;
+				color: $wh;
+				.bp1 {
+					font-size: 22px;
+				}
+				.bp2 {
+					font-size: 12px;
+				}			
+			}
+		}
+		.rest {
+			@include outer-container;
+			background-color: #f2efed;
+			.part1 {
+				@include part;
+				.line {
+					i {
+						color: #71c357;
+					}
+				}
+			}
+			.part2 {
+				@include part;
+			}
+			.part3 {
+				@include part;
+			}
+
+		}
+	}
+		
+}
