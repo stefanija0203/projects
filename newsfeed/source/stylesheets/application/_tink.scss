@@ -3,42 +3,58 @@ $gutter: 5px;
 $grid-columns: 12;
 $max-width: 300px;
 $wh: #ffffff;
+$blue: #009dde;
 
 @mixin part {
 	.header {
 		@include span-columns(10);
 		@include shift(2);
+		margin-top: 20px;
+		margin-bottom: 10px;
 		font-size: 10px;
 		color: #c3c3c2;
 	}
-	.circle {
-		@include span-columns(2);
-		@include size(40px 40px);
-		border-radius: 20px;
-		i {
-			color: $wh;
-		}
-	}
-	.white {
-		@include span-columns(10);
-		@include omega();
-		background-color: $wh;
-		.title {
-			@include span-columns(6 of 10);
-			font: {
-				size: 18px;
-				weight: bold;
+	.together {
+		@include outer-container;
+		.circle {
+			@include span-columns(2);
+			@include size(36px 36px);
+			padding: 9px;
+			border-radius: 18px;
+			text-align: center;
+			i {
+				color: $wh;
 			}
 		}
-		.amount {
-			@include span-columns(4 of 10);
+		.white {
+			@include span-columns(10);
 			@include omega();
-			text-align: right;
-			font-size: 18px;
+			background-color: $wh;
+			padding: 10px;
+			.title {
+				@include span-columns(6 of 10);
+				font: {
+					size: 17px;
+					weight: bold;
+				}
+			}
+			.amount {
+				@include span-columns(4 of 10);
+				@include omega();
+				text-align: right;
+				font-size: 17px;
+			}
+			.line {
+				margin-top: 34px;
+				font-size: 12px;
+			}
 		}
-		.line {
-			font-size: 10px;
-		}
+	}
+}
+
+@mixin orange {
+	.circle {
+		background-color: #fcbc34;
 	}
 }
 
@@ -47,8 +63,9 @@ $wh: #ffffff;
 		@include outer-container;
 		.first {
 			background-color: $wh;
+			height: 300px;
 			.overview {
-				padding: 10px;
+				padding: 15px;
 				height: 50px;
 				background-color: $wh;
 				opacity: .9;
@@ -104,23 +121,32 @@ $wh: #ffffff;
 				@include span-columns(6);
 				@include pad();
 				opacity: .8;
-				margin-top: 60px;
+				margin-top: 68px;
 				text-align: center;
 				background-color: #000000;
 				color: $wh;
 				.bp1 {
-					font-size: 22px;
+					font-size: 24px;
 				}
 				.bp2 {
-					font-size: 12px;
+					font-size: 10px;
 				}			
 			}
 		}
 		.rest {
 			@include outer-container;
 			background-color: #f2efed;
+			.border {
+				@include size(1px 1233px);
+				border-left: 2px dotted #b2b2b2;
+				margin-left: 17px;
+			}
 			.part1 {
 				@include part;
+				margin-top: -1233px;
+				.circle {
+					background-color: #71c357;
+				}
 				.line {
 					i {
 						color: #71c357;
@@ -129,12 +155,178 @@ $wh: #ffffff;
 			}
 			.part2 {
 				@include part;
+				@include orange;
 			}
 			.part3 {
 				@include part;
+				.circle {
+					background-color: $blue;
+				}
 			}
+			.part4 {
+				@include part;
+				.circle {
+					background-color: #f18ee8;
+				}
+				.wcont {
+					@include outer-container;
+					.wfirst {
+						.wblue {
+							@include span-columns(4);
+							height: 110px;
+							border-top-right-radius: 55px;
+							border-bottom-right-radius: 55px;
+							background-color: $blue;
+							margin-top: 15px;
+						}
+						.wtext {
+							@include span-columns(4);
+							.t1 {
+								font-size: 18px;
+								text-align: center;
+								margin-top: 5px;
+							}
+							.t2 {
+								font-size: 8px;
+								text-align: center;
+								margin-top: 20px;
+							}
+							.t3 {
+								font-size: 20px;
+								text-align: center;
+								margin-top: 5px;
+							}
+							.t4 {
+								font-size: 8px;
+								text-align: center;
+								margin-top: 5px;
+							}
+						}
+						.wgreen {
+							@include span-columns(4);
+							height: 140px;
+							border-top-left-radius: 70px;
+							border-bottom-left-radius: 70px;
+							background-color: #67bf4c;
+							float: right;
+						}
+					}
+					.line {
+						@include span-columns(12);
+						height: 1px;
+						background-color: #cccccc;
+					}
+					.large {
+						@include span-columns(12);
+						font-size: 10px;
+						text-align: center;
+						margin: 20px 0px;
+					}
+					.item {
+						@include outer-container;
+						margin-top: 10px;
+						.icon {
+							@include span-columns(1);
+							color: $blue;
+							margin-top: 5px;
+						}
+						.itext {
+							@include span-columns(11);
+							@include pad();
+								.p11 {
+									@include span-columns(7 of 11);
+									font-weight: bold;
+									font-size: 15px;
+								}
+								.p12 {
+									@include span-columns(4 of 11);
+									@include omega();
+									font-size: 15px;
+									text-align: right;
+								}
+								.p21 {
+									@include span-columns(7 of 11);
+									font-size: 13px;
+									color: #b2b2b2;
 
+								}
+								.p22 {
+									@include span-columns(4 of 11);
+									@include omega();
+									text-align: right;
+									font-size: 13px;
+									color: #b2b2b2;
+
+								}
+						}
+					}
+				}
+
+			}
+			.part5 {
+				@include part;
+				@include orange;
+				.left {
+					@include span-columns(9);
+					.ptitle {
+						font: {
+							size: 17px;
+							weight: bold;
+						}
+					}
+					.pline {
+						margin-top: 10px;
+						font-size: 12px;
+					}
+					.blue {
+						font-size: 12px;
+						color: $blue;
+					}
+				}
+				.right {
+					@include span-columns(3);
+					height: 52px;
+					background-color: $blue;
+					border-radius: 26px;
+					margin-top: 5px;
+					.wh {
+						background-color: #ffffff;
+						@include size(30px 30px);
+						border-radius: 15px;
+						padding: 7px;
+						margin: 11px 0px 0px 11px;
+						i {
+							color: $blue;
+						}
+					}
+				}
+			}
+			.part6 {
+				@include part;
+				@include orange;
+				.line {
+					i {
+						color: $blue;
+					}
+				}
+			}
+			.part7 {
+				@include part;
+				.circle {
+					background-color: $blue;
+				}
+			}
+			.part8 {
+				@include part;
+				.circle {
+					background-color: #e4464d;
+				}
+				.line {
+					i {
+						color: #e4464d;
+					}
+				}
+			}
 		}
-	}
-		
+	}	
 }
