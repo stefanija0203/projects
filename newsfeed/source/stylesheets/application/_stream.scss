@@ -1,0 +1,165 @@
+$column: 40px;
+$gutter: 10px;
+$grid-columns: 12;
+$max-width: 590px;
+$wh: #ffffff;
+
+@mixin item {
+	padding: 10px;
+	font-size: 12px;
+	.icon {
+		@include span-columns(1);
+		height: 35px;
+		border-radius: $column/2;
+		background-color: #00a7e3;
+		border: 3px solid $wh;
+		text-align: center;	
+		padding-top: 7px;
+		margin-top: 33px;
+		i {
+			color: $wh;
+		}
+	}
+	.block {
+		@include span-columns(11);
+		margin-top: 20px;
+		border: 1px solid #cccccc;
+		border-radius: 5px;
+		box-shadow: 0px 2px 2px #cccccc;
+		.header {
+			height: 55px;
+			background-color: $wh;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			border-bottom: 1px solid #e2e2e2;
+			padding: 15px;
+			.img {
+				@include size(30px 30px);
+				border-radius: 5px;
+				float: left;
+			}
+			.name {
+				margin-top: 8px;
+				.a {
+					color: #0000ff;
+					float: left;
+					margin: 0px 10px;
+				}
+			}
+		}
+		.body {
+			background-color: #fbfbff;
+			border-bottom-right-radius: 5px;
+			border-bottom-left-radius: 5px;
+			padding: 15px;
+			.quote {
+				font-size: 16px;
+				border-left: 4px solid #e2e2e2;
+				padding-left: 5px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+			.line {
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+@mixin blue {
+	@include size(20px 7px);
+	background-color: #bfcedc;
+	margin-left: 40px;
+}
+
+.eventstream {
+	background-color: #ffffff;
+	.stcont {
+		@include outer-container;
+		background-color: #e6e6ff;
+		.item1 {
+			@include item;
+		}
+		.item2 {
+			@include item;
+			.icon {
+				background-color: #243c69;
+			}
+		}
+		.item3 {
+			@include item;
+			.name {
+				display: inline;
+				margin-left: 10px;
+				.a1 {
+					color: #0000ff;
+					display: inline;
+					margin: 0px 10px;
+				}
+				.i1 {
+					@include size(30px 30px);
+					border-radius: 5px;
+					display: inline;
+					margin-left: 10px;
+				}
+			}
+			.bord {
+				@include size(30px 30px);
+				background-color: #4c4c4c;
+				float: right;
+				margin-top: -33px;
+			}
+			.line2 {
+				margin-top: 35px;
+				border-top: 1px solid #e2e2e2;
+				color: #cccccc;
+				align-self: center;	
+				padding-top: 10px;			
+				.ic {
+					@include size(20px 20px);
+					border-radius: 10px;
+					background-color: #fbfbff;
+					border: 2px solid #cccccc;
+					text-align: center;
+					padding-top: 2px;
+					float: left;
+					margin: -4px 5px 0px 5px;
+				}
+			}
+		}
+		.item4 {
+			@include item;
+			.icon {
+				background-color: #fea307;
+			}
+		}
+		.item5 {
+			@include item;
+		}
+		.blue {
+			@include size(7px 800px);
+			background-color: #bfcedc;
+			margin: -100px 0px 0px 25px;
+		}
+		.blue2 {
+			@include blue;
+			margin-top: -743px;
+		}
+		.blue3 {
+			@include blue;
+			margin-top: 167px;
+		}
+		.blue4 {
+			@include blue;
+			margin-top: 118px;
+		}
+		.blue5 {
+			@include blue;
+			margin-top: 169px;
+		}
+		.blue6 {
+			@include blue;
+			margin-top: 118px;
+		}
+	}
+}
