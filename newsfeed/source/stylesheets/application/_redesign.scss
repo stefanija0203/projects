@@ -1,0 +1,149 @@
+$column: 40px;
+$gutter: 25px;
+$grid-columns: 12;
+$max-width: 755px;
+$wh: #ffffff;
+
+@mixin block {
+	.icon {
+		@include span-columns(1);
+		height: 44px;
+		margin-top: 20px;	
+		border-radius: 22px;
+		border: 2px solid $wh;
+		text-align: center;
+		padding-top: 10px;
+		i {
+			color: $wh;
+		}
+	}
+	.box {
+		@include span-columns(11);
+		background-color: $wh;
+		border-radius: 3px;
+		padding: 5px 10px;
+		margin-top: 20px;
+		.inline {
+			@include span-columns(12);
+			display: inline-block;
+			.line {
+				@include span-columns(10 of 12);
+				float: left;
+				margin-top: 10px;
+			}
+			.name {
+				@include span-columns(1 of 12);
+				color: #aaaaaa;
+				font-size: 14px;
+				text-align: right;
+				margin-top: 10px;
+			}
+			img {
+				@include span-columns(1 0f 12);
+				@include omega();
+				height: $column;
+			}
+		}
+		.in {
+			display: inline-block;
+			margin-top: 20px;
+			.note {
+				color: #666666;
+				float: left;
+			}
+			.note1 {
+				color: #aaaaaa;
+				border-bottom: 1px dashed #aaaaaa;
+				float: right;
+				margin-left: 5px;
+			}
+		}
+	}
+}
+
+.tredesign {
+	background-color: $wh;
+	.recont {
+		@include outer-container;
+		background-color: #f3f4f6;
+		padding: 25px;
+		.block1 {
+			@include block;
+			.icon {
+				background-color: #e9ce9e;
+			}
+		}
+		.block2 {
+			@include block;
+			.icon {
+				background-color: #b7daa0;
+				padding-top: 12px;
+			}
+			.in{
+				display: inline-block;
+				.in1 {
+					display: inline-block;
+					.note {
+
+					}
+					.note2 {
+
+					}
+				}
+				.in2 {
+					display: inline-block;
+					.note3 {
+
+					}
+					.note1 {
+
+					}
+				}
+			}
+		}
+		.block3 {
+			@include block;
+			.icon {
+				background-color: #8cadc5;
+			}
+		}
+		.block4 {
+			@include block;
+			.icon {
+				background-color: #b7daa0;
+				padding-top: 12px;
+			}
+		}
+		.block5 {
+			@include block;
+			.icon {
+				background-color: #8cadc5;
+			}
+		}
+		.block6 {
+			@include block;
+			.icon {
+				background-color: #b7daa0;
+				padding-top: 12px;
+			}
+		}
+		.block7 {
+			@include block;
+			.icon {
+				background-color: #b7daa0;
+				padding-top: 12px;
+			}
+		}
+		.block8 {
+			@include block;
+			.icon {
+				background-color: #be9798;
+			}
+			.in {
+				@include span-columns(10);
+				float: left;
+			}
+
+		}
+	}
+}

@@ -73,10 +73,9 @@ $wh: #ffffff;
 }
 
 .eventstream {
-	background-color: #ffffff;
+	background-color: #e6e6ff;
 	.stcont {
 		@include outer-container;
-		background-color: #e6e6ff;
 		.item1 {
 			@include item;
 		}
@@ -151,15 +150,15 @@ $wh: #ffffff;
 		}
 		.blue4 {
 			@include blue;
-			margin-top: 118px;
+			margin-top: 119px;
 		}
 		.blue5 {
 			@include blue;
-			margin-top: 169px;
+			margin-top: 178px;
 		}
 		.blue6 {
 			@include blue;
-			margin-top: 118px;
+			margin-top: 119px;
 		}
 	}
 }

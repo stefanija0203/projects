@@ -1,0 +1,21 @@
+@mixin bubble {
+	@include size(10px 10px);
+	background-color: #ffffff;
+    content: "";
+    display: block;
+    position: relative;
+    @include transform(rotate(45deg));
+    border-left: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+   }
+
+@mixin bubblet {
+	@include size(10px 10px);
+	background-color: #ffffff;
+    content: "";
+    display: block;
+    position: relative;
+    @include transform(rotate(45deg));
+    border-left: 1px solid #444444;
+    border-top: 1px solid #444444;
+   }

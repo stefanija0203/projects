@@ -1,6 +1,182 @@
 $column: 40px;
-$gutter: 10px;
+$gutter: 25px;
 $grid-columns: 12;
-$max-width: 590px;
+$max-width: 755px;
 $wh: #ffffff;
 
+@mixin box {
+	img {
+		@include span-columns(1);
+		height: $column;
+		border-radius: $column/2;
+		margin-top: 11px;
+	}
+	.block {
+		@include span-columns(11);
+		@include omega();
+		border-radius: 5px;
+		font-size: 14px;
+		margin-top: 15px;
+		.header {
+			background-color: $wh;
+			padding: 8px;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+			border-bottom: 1px solid #cccccc;
+			.comment {
+				@include c;
+				background-color: #0000ff;
+			}
+			.stat {
+				margin-top: 3px;
+				.ar {
+					color: #ff0000;
+				}
+			}
+			.time {
+				color: #cccccc;
+				float: right;
+				margin-top: -17px;
+			}
+		}
+		.body {
+			background-color: #f9f9f9;
+			padding: 10px 15px;
+			border-bottom-left-radius: 3px;
+			border-bottom-right-radius: 3px;
+			box-shadow: 0px 2px 2px #b8b8b8;
+		}
+	}
+	.header::after {
+		@include bubble;
+		margin: -15px 0px 5px -14px;
+    }
+	.com{
+		@include com;
+		width: 188px;
+	}
+	.com::before {
+		@include bubblet;
+		margin: -11px 0px 0px 5px;
+	}	
+}
+
+@mixin c {
+	padding: 3px;
+	color: $wh;
+	font-weight: bold;
+	font-size: 14px;
+	border-radius: 3px;
+	text-align: center;
+	float: left;
+	margin-right: 10px;
+	text-shadow: 1px -1px #333333;
+}
+
+@mixin com {
+	background-color: #f9f9f9;
+	border-radius: 11px;
+	border-width: 1px;
+	border-style: inset;
+	padding: 5px 8px;
+	margin: 15px 0px;
+	.ab {
+		color: #0000ff;
+	}
+}
+
+.act {
+	background-image: url('../images/gray_jean/gray_jean/gray_jean.png');
+	.actcont {
+		@include outer-container;
+		padding: 20px;
+		margin: auto;
+		.today {
+			@include span-columns(1);
+			color: #a3a3a3;
+			font-weight: bold;
+			font-size: 14px;
+		}
+		.dec {
+			@include span-columns(11);
+			@include omega();
+			color: #a3a3a3;
+			font-size: 14px;
+		}
+		.box1 {
+			@include box;
+			.body {
+				.text {
+					border-left: 3px solid #cccccc;
+					padding-left: 10px;
+					font-size: 15px;
+				}
+			}
+			.block::after {
+			}
+		}
+		.box2 {
+			@include box;
+			.header {
+				border-bottom-style: none;
+				border-radius: 3px;
+				.task {
+					@include c;
+					background-color: #009900;
+				}
+				.ag {
+					color: #009900;
+					text-decoration: line-through;
+				}
+			}
+		}
+		.box3 {
+			@include box;
+			.file {
+				@include c;
+				background-color: #993366;
+			}
+			.body {
+				height: 95px;
+				.pic {
+					@include span-columns(2 of 11);
+					height: 50px;
+					background-color: #cccccc;
+				}
+			}
+			.com1 {
+				@include com;
+				width: 207px;
+			}
+			.com1::before {
+				@include bubblet;
+				margin: -11px 0px 0px 5px;
+			}
+		}
+		.box4 {
+			@include box;
+			.list {
+				@include c;
+				background-color: #ff0000;
+			}
+			.body {
+				.text {
+					border-left: 3px solid #cccccc;
+					padding-left: 10px;
+					font-size: 15px;
+				}
+			}
+		}
+		.dot {
+			@include size(1px 620px);
+			border-left: 1px dotted #333333;
+			margin: 22px 0px 0px 21px;
+		}
+		.dot2 {
+			@include size(1px 17px);
+			border-left: 1px dotted #333333;
+			margin: -20px 0px 0px 21px;
+		}
+	}
+}
+		
