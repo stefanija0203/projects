@@ -7,6 +7,7 @@ $wh: #ffffff;
 @mixin block {
 	.icon {
 		@include span-columns(1);
+		@include box-shadow(0 0 4px 1px hsla(0, 0%, 0%, 0.10));
 		height: 44px;
 		margin-top: 20px;	
 		border-radius: 22px;
@@ -21,22 +22,32 @@ $wh: #ffffff;
 		@include span-columns(11);
 		background-color: $wh;
 		border-radius: 3px;
+		border: 1px solid #dbdbdb;
 		padding: 5px 10px;
 		margin-top: 20px;
+		font-size: 14px;
 		.inline {
 			@include span-columns(12);
 			display: inline-block;
 			.line {
-				@include span-columns(10 of 12);
+				@include line;
+			}
+			.lineblue {
+				@include line;
+				color: #0000ff;
+			}
+			.in1 {
+				@include in;
+				@include span-columns(10);
 				float: left;
-				margin-top: 10px;
+				margin-top: 12px;
 			}
 			.name {
 				@include span-columns(1 of 12);
 				color: #aaaaaa;
-				font-size: 14px;
+				font-size: 13px;
 				text-align: right;
-				margin-top: 10px;
+				margin-top: 12px;
 			}
 			img {
 				@include span-columns(1 0f 12);
@@ -45,27 +56,58 @@ $wh: #ffffff;
 			}
 		}
 		.in {
-			display: inline-block;
+			@include span-columns(12);
+			@include in;
 			margin-top: 20px;
-			.note {
-				color: #666666;
-				float: left;
-			}
-			.note1 {
-				color: #aaaaaa;
-				border-bottom: 1px dashed #aaaaaa;
-				float: right;
-				margin-left: 5px;
-			}
 		}
 	}
 }
 
+@mixin line {
+	@include span-columns(10 of 12);
+	float: left;
+	margin-top: 10px;
+}
+
+@mixin in {
+	display: inline-block;
+	.note {
+		color: #666666;
+	}
+	.note1 {
+		color: #aaaaaa;
+		border-bottom: 1px dashed #aaaaaa;
+	}
+	i {
+		margin-left: 10px;
+	}
+}
+
+@mixin b35 {
+	@include block;
+	.icon {
+		background-color: #8cadc5;
+	}
+	.line2 {
+		margin-top: 50px;
+		color: #666666;
+	}
+	.icons {
+		color: #aaaaaa;
+		float: right;
+	}
+}
+
+@mixin border {
+	@include size(670px 1px);
+	border-top: 1px solid #dbdbdb;
+}
+
 .tredesign {
 	background-color: $wh;
+	background-color: #f3f4f6;
 	.recont {
 		@include outer-container;
-		background-color: #f3f4f6;
 		padding: 25px;
 		.block1 {
 			@include block;
@@ -81,31 +123,21 @@ $wh: #ffffff;
 			}
 			.in{
 				display: inline-block;
-				.in1 {
-					display: inline-block;
-					.note {
-
-					}
-					.note2 {
-
-					}
-				}
-				.in2 {
-					display: inline-block;
-					.note3 {
-
-					}
-					.note1 {
-
-					}
+				.note2 {
+					color: #aaaaaa;
 				}
 			}
 		}
 		.block3 {
-			@include block;
-			.icon {
-				background-color: #8cadc5;
-			}
+			@include b35;
+		}
+		.small {
+			@include span-columns(12);
+			@include size(20px 20px);
+			border-radius: 10px;
+			background-color: #b7daa0;
+			border: 2px solid $wh;
+			margin: 20px 700px 10px 12px;
 		}
 		.block4 {
 			@include block;
@@ -115,10 +147,7 @@ $wh: #ffffff;
 			}
 		}
 		.block5 {
-			@include block;
-			.icon {
-				background-color: #8cadc5;
-			}
+			@include b35;
 		}
 		.block6 {
 			@include block;
@@ -133,6 +162,9 @@ $wh: #ffffff;
 				background-color: #b7daa0;
 				padding-top: 12px;
 			}
+			.note3 {
+				color: #005CE6;
+			}
 		}
 		.block8 {
 			@include block;
@@ -144,6 +176,43 @@ $wh: #ffffff;
 				float: left;
 			}
 
+		}
+		.border {
+			@include size(1px 860px);
+			border-left: 1px solid #dbdbdb;
+			margin: 20px 0px 0px 22px;
+		}
+		.border1 {
+			@include border;
+			margin: -838px 0px 0px 22px;
+		}
+		.border2 {
+			@include border;
+			margin: 107px 0px 0px 22px;
+		}
+		.border3 {
+			@include border;
+			margin: 122px 0px 0px 22px;
+		}
+		.border4 {
+			@include border;
+			margin: 183px 0px 0px 22px;
+		}
+		.border5 {
+			@include border;
+			margin: 69px 0px 0px 22px;
+		}
+		.border6 {
+			margin: 132px 0px 0px 22px;
+			@include border;
+		}
+		.border7 {
+			margin: 107px 0px 0px 22px;
+			@include border;
+		}
+		.border8 {
+			@include border;
+			margin: 71px 0px 0px 22px;
 		}
 	}
 }
