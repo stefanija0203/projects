@@ -1,0 +1,235 @@
+$column: 30px;
+$gutter: 30px;
+$grid-columns: 15;
+$max-width: 870px;
+$wh: #ffffff;
+$gr: #e1e1e1;
+
+@mixin block {
+	@include span-columns(13);
+	@include shift(2);
+	.icon {
+		@include span-columns(1 of 13);
+		@include size(36px 36px);
+		border-radius: 18px;
+		padding: 7px;
+		margin-top: 25px;
+		i {
+			color: $wh;
+		}
+	}
+	.box {
+		@include span-columns(12 of 13);
+		padding: 0px 20px 0px 20px;
+		margin-top: 25px;
+		vertical-align: top;
+		font-size: 14px;
+		img {
+			@include size(25px 25px);
+			@include position(relative, 8px 0 0 0px);
+			border-radius: 13px;
+		}
+		#img {
+			margin-left: 5px;
+		}
+		.s1 {
+			font-weight: bold;
+		}
+		.s3 {
+			color: #0000ff;
+		}
+		.s4 {
+			color: #d6d6d6;
+		}
+		.s5 {
+			font-weight: bold;
+			color: #0000ff;
+		}
+		.line {
+			i {
+				color: #d6d6d6;
+				float: right;
+			}
+		}
+	}
+}
+
+.ass {
+	background-color: $wh;
+	.asscont {
+		@include outer-container;
+		padding: 20px 0px;
+		.recent {
+			@include span-columns(12);
+			@include shift(3);
+			color: $gr;
+
+			padding-left: 20px;
+		}
+		.block1 {
+			@include block;
+			.icon {
+				padding: 7px 0px 0px 8px;
+				background-color: #634ebf;
+			}
+		}
+		.block2 {
+			@include block;
+			line-height: 1.6em;
+			.icon {
+				background-color: $wh;
+				border: 1px solid #d6d6d6;
+				padding-top: 4px;
+				i {
+					color: #d6d6d6;
+				}
+			}
+		}
+		.cont {
+			@include span-columns (15);
+			margin-top: -13px;
+			.ago {
+				font-size: 10px;
+				margin-left: 30px;
+				color: #d6d6d6;
+			}
+			.small {
+				@include size(10px 10px);
+				border-radius: 5px;
+				background-color: $gr;
+				margin: -10px 0px 0px 131px;
+			}
+		}
+		.block3 {
+			@include block;
+			.box {
+				margin-top: 35px;
+			}
+			.icon {
+				background-color: $wh;
+				border: 1px solid #d6d6d6;
+				padding-top: 6px;
+				i {
+					color: #e2e2e2;
+				}
+			}
+		}
+		.block4 {
+			@include block;
+			line-height: 1.6em;
+			.icon {
+				background-color: #f1a327;
+				padding: 5px 0px 0px 9px;
+			}
+		}
+		.block5 {
+			@include block;
+			.box {
+				margin-top: 35px;
+			}
+			.icon {
+				background-color: $wh;
+				border: 1px solid #d6d6d6;
+				padding-top: 6px;
+				i {
+					color: #d6d6d6;
+				}
+			}
+		}
+		.haos {
+			@include span-columns(15);
+			@include box-shadow(0 0 2px 1px hsla(0, 0%, 0%, 0.15));
+			border: 1px solid $gr;
+			border-radius: 5px;
+			margin-top: 25px;
+			padding-bottom: 25px;
+			.one {
+				@include span-columns(1);
+				@include box-shadow(0 0 3px 1px hsla(0, 0%, 0%, 0.15));
+				border: 1px solid $gr;
+				border-radius: 4px;
+				text-align: center;
+				margin: 28px 0px 0px 23px;
+				color: #634ebf;
+				.up {
+					margin: -10px 0 5px 0;
+				}
+			}
+			.haos1 {
+				@include span-columns(13);
+				float: right;
+				line-height: 1.6em;
+				.icon {
+					@include span-columns(1 of 13);
+					@include size(36px 36px);
+					border-radius: 18px;
+					padding: 7px;
+					margin-top: 25px;
+					i {
+						color: $wh;
+					}
+				}
+				.box {
+					@include span-columns(12 of 13);
+					padding-left: 20px;
+					margin-top: 25px;
+					vertical-align: top;
+					font-size: 14px;
+					img {
+						@include size(25px 25px);
+						@include position(relative, 8px 0 0 0px);
+						border-radius: 12px;
+					}
+					#img {
+						margin-left: 5px;
+					}
+					.s1 {
+						font-weight: bold;
+					}
+					.s3 {
+						color: #0000ff;
+					}
+					.s4 {
+						color: $gr;
+					}
+					.s5 {
+						font-weight: bold;
+						color: #0000ff;
+					}
+					.line {
+						i {
+							color: #b6b6b6;
+							float: right;
+						}
+					}
+				}
+				.icon {
+					background-color: #0000ff;
+					padding: 5px 0px 0px 9px;
+				}
+			}
+		}
+		.bord1 {
+			@include size(1px 70px);
+			border-left: 2px dashed #f1f1f1;
+			margin: -20px 0px 0px 135px;
+		}
+		.bord2 {
+			@include size(1px 473px);
+			border-left: 3px solid #f1f1f1;
+			margin-left: 135px;
+		}
+		.bord3 {
+			@include span-columns(12 of 15);
+			@include shift(3);
+			width: 710px;
+			border-bottom: 1px solid #f1f1f1;
+			margin: 25px 0px 0px 137px;
+		}
+		.ln {
+			@include size(1px 109px);
+			border-left: 1px solid $gr;
+			margin-left: 90px;
+		}
+	}
+}
