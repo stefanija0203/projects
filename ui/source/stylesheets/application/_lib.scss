@@ -1,0 +1,9 @@
+@mixin bubble {
+	@include size(10px 10px);
+	background-color: #ffffff;
+    content: "";
+    display: block;
+    position: relative;
+    @include transform(rotate(45deg));
+}
+
