@@ -1,0 +1,309 @@
+$column: 90px;
+$gutter: 10;
+$grid-columns: 12;
+$max-width: 1190px;
+$wh: #ffffff;
+$col: #1a1a1a;
+$sens: #e6e6e6;
+$back: #fafafa;
+
+@mixin imlek {
+	background-color: $wh;
+	padding: 30px;
+	margin: 50px 0px;
+	@include clearfix;
+	.top {
+		@include top;
+	}
+	
+}
+
+@mixin top {
+	@include span-columns(3);
+	background-color: $wh;
+	padding: 10px;
+	border-radius: 5px;
+	border: 3px solid $sens/1.1;
+	@include box-shadow(0 0 5px 2px hsla(0, 0%, 0%, 0.15));
+	.name {
+		font-weight: bold;
+		text-align: center;
+		.s1 {	
+			color: $sens/2.6;
+			font-size: 1.1em;
+		}
+		.s2 {
+			color: $sens/1.8;
+			font-size: 0.9em;
+		}
+		.s3 {
+			color: #ff3300;
+		}
+	}
+	.mfc {
+		font-weight: bold;
+		text-align: center;
+		color: $sens/2;
+		margin-top: 10px;
+	}
+	img	{
+		@include size($column*3 $column*3);
+		margin-left: -15px;
+	}
+	.price {
+		font-weight: bold;
+		font-size: 1.5em;
+		text-align: center;
+		color: $col
+	}
+	button {
+		@include span-columns(3 of 3);
+		height: 35px;
+		font-weight: bold;
+		font-size: 18px;
+		color: $wh;
+		border-radius: 5px;
+		background-color: #008a00;
+		border-style: none;
+		margin-top: 10px;
+		@include box-shadow(0 0 3px 2px hsla(0, 0%, 0%, 0.15));
+	}
+}
+
+@mixin hover {
+	border: 3px solid $sens/1.3;
+	@include box-shadow(0 0 5px 2px hsla(0, 0%, 0%, 0.25));
+}
+
+@mixin top2 {
+	padding: 0px;
+	.pic {
+		@include size($column*3-7 $column*3-7);
+		@include radial-gradient(circle at 50% 50%, #ffffff 30%, #f3f3f3 100%);
+		padding: 50px 75px;
+		img {
+			@include size(140px 160px);
+		}
+	}
+	.pad {
+		padding: 15px;
+		.name {
+			float: left;
+			.s1 {
+				font-size: 0.9em;
+			}
+			.s3 {
+				font-size: 0.9em;
+			}
+			.s4 {
+				font-size: 0.9em;
+				margin-left: 35px;
+				color: $sens/1.7;
+			}
+		}
+		.star {
+			color: #ffff00;
+			margin: 33px 0px 15px 17px;
+		}
+		.fk {
+			font-size: 0.7em;
+			color: $sens/2.6;
+			.kup {
+				@include span-columns(6);
+				float: left;
+				text-align: center;
+			}
+			.flw {
+				@include span-columns(6);
+				float: right;
+				text-align: center;
+			}
+		}
+		.price {
+			font-size: 0.7em;
+			color: $sens/2.6;
+			.pr1 {
+				@include span-columns(6);
+				float: left;
+				text-align: center;
+				margin: 10px 0px;
+			}
+			.pr2 {
+				@include span-columns(6);
+				float: right;
+				text-align: center;
+				margin: 10px 0px;
+			}
+		}
+		button {
+			margin-bottom: 5px;
+		}
+	}
+}
+
+.topicres {
+	background-color: $back/1.1;
+	.topcont {
+		@include outer-container;
+		.imlek {
+			@include imlek;
+			.top:hover {
+				@include hover;
+			};
+		.imlek:after {
+			@include bubble;
+			@include size(20px 20px);
+			background-color: #000000;
+			margin: 0px 0px 0px 555px;
+		}
+		}
+		.imlek2 {
+			@include imlek;
+			.top1 {
+				@include top;
+				@include top2;
+			}
+			.top1:hover {
+				@include hover;
+			}
+			.top2 {
+				@include top;
+				@include top2;
+				.pad {
+					padding: 10px;
+					.name {
+						margin-bottom: 15px;
+						.s4 {
+							margin-left: 10px;
+						}
+					}
+					.line {
+						font-size: 0.8em;
+						color: $sens/2.3;
+						margin-bottom: 20px;
+						.s3 {
+							color: #ff3300;
+							font-weight: bold;
+							margin-left: 10px;
+						}
+					}
+					.fk {
+
+						.kup {
+							@include span-columns(4);
+							text-align: left;
+						}
+						.like {
+							@include span-columns(4);
+							text-align: center;
+						}
+						.flw {
+							@include span-columns(4);
+							text-align: left;
+							padding-left:4px;
+						}
+					}
+					.price {
+						font-size: 0.8em;
+						.pr1 {
+							@include span-columns(4);
+							text-align: left;
+						}
+						.pr2 {
+							@include span-columns(4);
+							text-align: left;
+							padding-left: 4px;
+						}
+						.pr3 {
+							@include span-columns(4);
+							margin: 10px 0px;
+						}
+					}
+				}
+			}
+			.top2:hover {
+				@include hover;
+			}
+		}
+		.imlek2:after {
+			@include bubble;
+			@include size(20px 20px);
+			background-color: #000000;
+			margin: 450px 0px 0px 555px;
+		}
+		.imlek3 {
+			@include imlek;
+			.top2 {
+				@include top;
+				@include top2;
+				@include span-columns(6);
+				.pic {
+					@include span-columns(5);
+					img {
+						@include size(80px 100px);
+					}
+				}
+				.pad {
+					@include span-columns(7);
+					@include omega(2n);
+					padding: 30px 20px;
+					.name {
+						margin-bottom: 25px;
+						.s4 {
+							margin-left: 20px;
+						}
+						.star {
+							margin-left: 40px;
+						}
+					}
+					.line {
+						font-size: 0.8em;
+						color: $sens/2.3;
+						margin-bottom: 35px;
+						.s3 {
+							color: #ff3300;
+							font-weight: bold;
+							margin-left: 10px;
+						}
+					}
+					.fk {
+
+						.kup {
+							@include span-columns(4);
+							text-align: left;
+						}
+						.like {
+							@include span-columns(4);
+							text-align: left;
+							padding-left: 4px;
+						}
+						.flw {
+							@include span-columns(4);
+							text-align: left;
+							padding-left:4px;
+						}
+					}
+					.price {
+						font-size: 0.8em;
+						.pr1 {
+							@include span-columns(4);
+							text-align: left;
+						}
+						.pr2 {
+							@include span-columns(4);
+							text-align: left;
+							padding-left: 4px;
+						}
+						.pr3 {
+							@include span-columns(4);
+							margin: 10px 0px;
+						}
+					}
+				}
+			}
+			.top2:hover {
+				@include hover;
+			}
+		}
+	}
+}
