@@ -1,0 +1,162 @@
+$column: 80px;
+$gutter: 10;
+$grid-columns: 12;
+$max-width: 1070px;
+$wh: #ffffff;
+$col: #1a1a1a;
+$sens: #e6e6e6;
+$back: #fafafa;
+$gr: #2e2d2a;
+$green: #39aa01;
+
+@mixin st {
+	@include span-columns(3);
+	@include omega(4n);
+	border: 2px solid #3986c0;
+	border-radius: 6px;
+	@include box-shadow(0 0 3px 1px hsla(0, 0%, 0%, 0.15));
+	margin-bottom: 30px;
+	.pic {
+		height: $column*2.5;
+		padding: $column/4 $column/2;
+		background-color: $wh;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		border-top: 1px solid $sens;
+		border-bottom: 1px solid $sens;
+		img {
+			@include size($column*2 $column*2);
+		}
+	}
+	.pad {
+		padding: 10px;
+		background-color: $wh;
+		@include clearfix;
+		.name {
+			font-size: 1.2em;
+			font-weight: bold;
+		}
+		.blue {
+			@include span-columns(2);
+			height: 2px;
+			background-color: #3986c0;
+			margin: 10px 0px;
+		}
+		.text {
+			@include span-columns(12);
+			font-size: 0.8em;
+			margin-bottom: 15px;
+		}
+		.row {
+			.price {
+				@include span-columns(2);
+				font-size: 1.1em;
+				font-weight: bold;
+			}
+			.tag {
+				@include span-columns(3);
+				float: right;
+				padding: 3px 4px;
+				border-radius: 3px;
+				@include linear-gradient(-90deg, #3c93d3 0%, #2d719f 100%);
+				color: $wh;
+			}
+		}
+	}
+	.triple {
+		@include span-columns(12);
+		border-top: 1px solid $sens;
+		background-color: $wh;
+		padding: 10px;
+		font-size: 0.8em;
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+		.t1 {
+			@include span-columns(4);
+		}
+		.t2 {
+			@include span-columns(4);
+			text-align: center;
+		}
+		.t3 {
+			@include span-columns(4);
+			text-align: right;
+		}
+	}
+}
+
+body {
+	font-family: 'Lato', serif;
+
+	.card {
+		background-color: $sens;
+		.cardcont {
+			@include outer-container;
+			padding: 30px 0px;
+			.cstyle {
+				@include st;
+			}
+			.sec {
+				.cstyle1 {
+					@include st;
+					.pad {
+						border-top-left-radius: 4px;
+						border-top-right-radius: 4px;
+						.name {
+							margin-bottom: 5px;
+						}
+						.pic {
+							margin-top: 45px;
+							border-radius: 0px;
+						}
+						.text {
+							margin-top: 15px;
+						}
+
+					}
+				}
+			}
+			.third {
+				.cstyle {
+					@include st;
+					.pic {
+						img {
+							z-index: 1;
+						}
+						.controls {
+							display: none;
+						}
+						&:hover {
+							.controls {
+								display: block;
+								@include size(244px 50px);
+								margin: -35px 0px 0px -40px;
+								background-color: $gr;
+								opacity: 0.7;
+								padding: 15px 10px;
+								font-size: 0.8em;
+								z-index:100;
+								color: $wh;
+								.h1 {
+									@include span-columns(4);
+								}
+								.h2 {
+									@include span-columns(4);
+									text-align: center;
+								}
+								.h3 {
+									@include span-columns(4);
+									text-align: right;
+								}
+							}
+						}
+					}
+					.pad {
+						border-bottom-left-radius: 4px;
+						border-bottom-right-radius: 4px;
+					}
+				}
+			}
+		}
+	}
+}

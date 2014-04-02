@@ -130,17 +130,17 @@ $gr: #2e2d2a;
 					font-weight: bold;
 					.tr21 {
 						@include span-columns(4);
-						margin-top: 10px;
+						margin-top: 0px;
 						text-align: left;
 					}
 					.tr22 {
 						@include span-columns(4);
 						text-align: center;
-						margin-top: 10px;
+						margin-top: 0px;
 					}
 					.tr23 {
 						@include span-columns(4);
-						margin-top: 10px;
+						margin-top: 0px;
 						text-align: right;
 					}
 				}
