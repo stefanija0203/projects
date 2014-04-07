@@ -1,0 +1,125 @@
+$column: 80px;
+$gutter: 10px;
+$span-columns: 12;
+$max-width: 1070px;
+$img: 110px;
+$pr: $column*2;
+$wh: #ffffff;
+$back: #666666;
+
+.id {
+	background-color: $wh;
+	font-family: Ubuntu, sans-serif;
+	.idcont	{
+		@include outer-container;
+		.photo {
+			background-color: $back;
+			@include clearfix;
+			color: $wh;
+			.header {
+				@include span-columns(12);
+				margin-top: 10px;
+				display: inline-block;
+				text-align: center;
+				font: {
+					size: 0.9em;
+					weight: bold;
+				}
+				span {
+					margin: 20px;
+				}
+			}
+			img {
+				@include size($img $img);
+				margin-left: ($max-width - $img)/2;
+				margin-top: 140px;
+			}
+			.name {
+				text-align: center;
+				margin-top: 20px;
+				font: {
+					size: 4em;
+					weight: bold;
+				}
+			}
+			.line {
+				text-align: center;
+				font-size: 0.9em;
+			}
+			.btn {
+				button {
+					@include span-columns(2);
+					@include shift(5);
+					border-style: none;
+					font-weight: bold;
+					font-size: 1.4em;
+					color: $wh;
+					background-color: #73B8E6;
+					margin-top: 130px;	
+					padding: 6px 0px;
+				}
+			}
+		}
+		.about {
+			padding: 50px 100px;
+			@include clearfix;
+			.title {
+				font-size: 1.3em;
+				font-weight: bold;
+				margin-bottom: 15px;
+			}
+			.smth {
+				.tit {
+					@include span-columns(6);
+					font-weight: bold;
+					margin-top: 30px;
+				}
+				.text {
+					@include span-columns(6);
+					margin-top: 30px;
+				}
+			}
+		}
+		.projects {
+			@include span-columns(12);
+			@include clearfix;
+			padding: 80px;
+			background-color: $back;
+			.project {
+				@include size($pr*3+1 $pr);
+				margin-left: 220px;
+				background-color: $wh;
+				.proj {
+					@include size($pr $pr);
+					@include background-image(url("../images/ideus.gif"));
+					background-size: 157px 157px;
+					display: inline-block;
+					border: 2px solid $back*1.7;
+					margin-right: -2px;
+					.pname {
+						@include size(157px 157px);
+						padding-top: $pr*0.4;
+						text-align: center;
+						color: $back;
+						font-weight: bold;
+					}
+					.phover {
+						display: none;
+					}
+					&:hover {
+						.phover {
+							@include size($pr*1.7 $pr*1.7);
+							background-color: black;
+							color: $wh;
+
+						}
+					}
+				}
+				#marg {
+					margin-left: -1px;
+				}
+
+			}	
+		}
+	}
+}
