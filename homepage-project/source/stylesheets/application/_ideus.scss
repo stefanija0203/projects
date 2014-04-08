@@ -5,15 +5,62 @@ $max-width: 1070px;
 $img: 110px;
 $pr: $column*2;
 $wh: #ffffff;
-$back: #666666;
+$back: #333333;
+
+@mixin img {
+	background-repeat: no-repeat;
+	background-size: $column $column;
+}
+
+@mixin proba {
+	@include span-columns(3);
+	.smth1 {
+		@include size(160px 100px);
+		color: #ff0000;
+		margin: 20px 0px 0px 0px;
+		z-index: 10;
+	}
+	.ikosaedar {
+		padding: 0px $column*0.5;
+		z-index: 1;
+		.angle {
+			@include size(100px 100px);
+		    @include transform(rotate(-35deg));
+			background-color: $back;
+		}
+		.minus {
+		    @include transform(rotate(35deg));
+		}
+		.base {
+			@include size(165 80px);
+			background-color: $back;
+			margin: -118px 0px 0px -20px;
+
+		}
+		.angle1 {
+			margin: 0px 0px 0px 0px;
+		}
+		.angle2 {
+			margin: -44px 0px 0px 25px;
+		}
+		.angle3 {
+			margin: -118px 0px 0px 25px;
+		}
+		.angle4 {
+			margin: -44px 0px 0px 0px;
+		}
+	}
+}
 
 .id {
 	background-color: $wh;
-	font-family: Ubuntu, sans-serif;
+	/*font-family: "Roboto", serif;*/
 	.idcont	{
 		@include outer-container;
 		.photo {
-			background-color: $back;
+			@include background-image(url("../images/images.jpg"));
+			background-repeat: no-repeat;
+			background-size: 1070px 620px;
 			@include clearfix;
 			color: $wh;
 			.header {
@@ -50,76 +97,117 @@ $back: #666666;
 				button {
 					@include span-columns(2);
 					@include shift(5);
+					@include box-shadow(0 0 3px 2px hsla(0%, 0%, 0%, 0.15));
 					border-style: none;
 					font-weight: bold;
 					font-size: 1.4em;
 					color: $wh;
-					background-color: #73B8E6;
+					background-color: #4188d3;
 					margin-top: 130px;	
 					padding: 6px 0px;
 				}
 			}
 		}
 		.about {
-			padding: 50px 100px;
+			
+		}
+		.projects {
+			padding: $column 0px;
+			@include span-columns(12);
 			@include clearfix;
-			.title {
-				font-size: 1.3em;
+			.project-title {
+				text-align: center;
+				font-size: 2em;
 				font-weight: bold;
-				margin-bottom: 15px;
+				margin-bottom: 50px;
 			}
-			.smth {
-				.tit {
-					@include span-columns(6);
-					font-weight: bold;
-					margin-top: 30px;
+			.first-line {
+				@include span-columns(12);
+				@include shift(1.75);
+				.proba {
+					@include proba;
 				}
-				.text {
-					@include span-columns(6);
-					margin-top: 30px;
+			}
+			.second-line {
+				@include span-columns(12);
+				@include shift(3.25);
+				.proba {
+					@include proba;
+
 				}
 			}
 		}
-		.projects {
+		.team {
 			@include span-columns(12);
 			@include clearfix;
-			padding: 80px;
+			padding: $column*1.5 0px $column*1.5 $max-width/3.7;
+			.img-team {
+				display: inline-block;
+				@include size($column $column);
+				@include background-image(url("../images/img6.jpg"));
+				@include img;
+				.color {
+					@include size($column $column);
+					background-color: $back;
+					opacity: 0.6;
+				}
+				&:hover {
+					.color {
+						background-color: transparent;
+					}
+				};
+			}
+			.img {
+				@include background-image(url("../images/img.jpg"));
+				@include img;
+			}
+			.img2 {
+				@include background-image(url("../images/img2.jpg"));
+				@include img;
+			}
+			.img3 {
+				@include background-image(url("../images/img3.jpg"));
+				@include img;
+			}
+			.img4 {
+				@include background-image(url("../images/img4.jpg"));
+				@include img;
+			}
+			.img5 {
+				@include background-image(url("../images/img5.jpg"));
+				@include img;
+			}
+		}
+		.footer {
+			@include span-columns(12);
+			@include clearfix;
 			background-color: $back;
-			.project {
-				@include size($pr*3+1 $pr);
-				margin-left: 220px;
-				background-color: $wh;
-				.proj {
-					@include size($pr $pr);
-					@include background-image(url("../images/ideus.gif"));
-					background-size: 157px 157px;
-					display: inline-block;
-					border: 2px solid $back*1.7;
-					margin-right: -2px;
-					.pname {
-						@include size(157px 157px);
-						padding-top: $pr*0.4;
-						text-align: center;
-						color: $back;
-						font-weight: bold;
-					}
-					.phover {
-						display: none;
-					}
-					&:hover {
-						.phover {
-							@include size($pr*1.7 $pr*1.7);
-							background-color: black;
-							color: $wh;
-
-						}
+			color: $wh;
+			padding: 20px 10px;
+			font-size: 0.6em;
+			.foot1 {
+				@include span-columns(3);
+			}
+			.foot2 {
+				@include span-columns(6);
+				text-align: center;
+				.icons {
+					border-bottom: 1px dotted $back*1.8;
+					padding-bottom: 5px;
+					font-size: 1.3em;
+					i {
+						margin: 0px 10px;
 					}
 				}
-				#marg {
-					margin-left: -1px;
+				.copy {
+					padding-top: 5px;
+					color: $back*2.5;
 				}
-
-			}	
+			}
+			.foot3 {
+				@include span-columns(3);
+				text-align: right;
+			}
 		}
 	}
 }
