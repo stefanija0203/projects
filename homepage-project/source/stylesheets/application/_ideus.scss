@@ -6,6 +6,7 @@ $img: 110px;
 $pr: $column*2;
 $wh: #ffffff;
 $back: #333333;
+$blue: #4188d3;
 
 @mixin img {
 	background-repeat: no-repeat;
@@ -22,7 +23,6 @@ $back: #333333;
 	}
 	.ikosaedar {
 		padding: 0px $column*0.5;
-		z-index: 1;
 		.angle {
 			@include size(100px 100px);
 		    @include transform(rotate(-35deg));
@@ -35,19 +35,34 @@ $back: #333333;
 			@include size(165 80px);
 			background-color: $back;
 			margin: -118px 0px 0px -20px;
-
+			position: absolute;
+			z-index: 100;
+			color: $wh;
+			text-align: center;
+			.project-name {
+				font-weight: bold;
+				padding: 5px;
+			}
+			.project-text {
+				font-size: 0.8em;
+				padding: 10px;
+			}
 		}
 		.angle1 {
 			margin: 0px 0px 0px 0px;
+			z-index: 1;
 		}
 		.angle2 {
 			margin: -44px 0px 0px 25px;
+			z-index: 2;
 		}
 		.angle3 {
-			margin: -118px 0px 0px 25px;
+			margin: -156px 0px 0px 25px;
+			z-index: 3;
 		}
 		.angle4 {
 			margin: -44px 0px 0px 0px;
+			z-index: 4;
 		}
 	}
 }
@@ -102,24 +117,50 @@ $back: #333333;
 					font-weight: bold;
 					font-size: 1.4em;
 					color: $wh;
-					background-color: #4188d3;
+					background-color: $blue;
 					margin-top: 130px;	
 					padding: 6px 0px;
 				}
 			}
 		}
 		.about {
-			
+			@include span-columns(8);
+			@include shift(2);
+			padding: $column 0px;
+			.about-title {
+				color: $blue;
+				margin-bottom: 30px;
+				font: {
+					size: 2em;
+					weight: bold;
+				}
+			}
+			.about-body {
+				@include clearfix;
+				margin: $column*0.25;
+				padding: 0px 0px $column*0.25 $column*0.5;
+				border-left: 1px dotted $blue;
+				.title {
+					@include span-columns(4);
+					margin-top: 20px;
+					font-weight: bold;
+				}
+				.text {
+					@include span-columns(8);
+					@include omega();
+					margin-top: 20px;
+				}
+			}
 		}
 		.projects {
-			padding: $column 0px;
 			@include span-columns(12);
 			@include clearfix;
-			.project-title {
+			.title {
 				text-align: center;
 				font-size: 2em;
 				font-weight: bold;
-				margin-bottom: 50px;
+				margin-bottom: 80px;
+				color: $blue;
 			}
 			.first-line {
 				@include span-columns(12);
@@ -140,42 +181,52 @@ $back: #333333;
 		.team {
 			@include span-columns(12);
 			@include clearfix;
-			padding: $column*1.5 0px $column*1.5 $max-width/3.7;
-			.img-team {
-				display: inline-block;
-				@include size($column $column);
-				@include background-image(url("../images/img6.jpg"));
-				@include img;
-				.color {
+			padding: $column*1.5 0px;
+			.team-title {
+				@include span-columns(12);
+				text-align: center;
+				color: $blue;
+				font-size: 2em;
+				font-weight: bold;
+			}
+			.images {
+				padding: $column*1.25 0px 0px $column*3.5;
+				.img-team {
+					display: inline-block;
 					@include size($column $column);
-					background-color: $back;
-					opacity: 0.6;
-				}
-				&:hover {
+					@include background-image(url("../images/img6.jpg"));
+					@include img;
 					.color {
-						background-color: transparent;
+						@include size($column $column);
+						background-color: $back;
+						opacity: 0.6;
 					}
-				};
-			}
-			.img {
-				@include background-image(url("../images/img.jpg"));
-				@include img;
-			}
-			.img2 {
-				@include background-image(url("../images/img2.jpg"));
-				@include img;
-			}
-			.img3 {
-				@include background-image(url("../images/img3.jpg"));
-				@include img;
-			}
-			.img4 {
-				@include background-image(url("../images/img4.jpg"));
-				@include img;
-			}
-			.img5 {
-				@include background-image(url("../images/img5.jpg"));
-				@include img;
+					&:hover {
+						.color {
+							background-color: transparent;
+						}
+					};
+				}
+				.img {
+					@include background-image(url("../images/img.jpg"));
+					@include img;
+				}
+				.img2 {
+					@include background-image(url("../images/img2.jpg"));
+					@include img;
+				}
+				.img3 {
+					@include background-image(url("../images/img3.jpg"));
+					@include img;
+				}
+				.img4 {
+					@include background-image(url("../images/img4.jpg"));
+					@include img;
+				}
+				.img5 {
+					@include background-image(url("../images/img5.jpg"));
+					@include img;
+				}
 			}
 		}
 		.footer {
