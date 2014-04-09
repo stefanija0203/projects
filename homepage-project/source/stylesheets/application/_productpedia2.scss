@@ -1,0 +1,156 @@
+$column: 80px;
+$gutter: 10px;
+$span-columns: 12;
+$max-width: 1070px;
+$img: 110px;
+$pr: $column*2;
+$wh: #ffffff;
+$back: #1a1a1a;
+$blue: #4188d3;
+$green: #277350;
+$orange: #d96b2b;
+
+@mixin img {
+	background-repeat: no-repeat;
+	background-size: $column $column;
+}
+
+.pp2 {
+	background-color: $wh;
+	/*font-family: "Roboto", serif;*/
+	.ppcont	{
+		@include outer-container;
+		.photo {
+			@include background-image(url("../images/diagmonds/diagmonds/diagmonds_@2X.png"));
+			background-repeat: no-repeat;
+			background-size: 1070px 620px;
+			@include clearfix;
+			color: $wh;
+			padding: 20px 100px 100px 100px;
+			.header {
+				@include span-columns(12);
+				display: inline-block;
+				.left {
+					@include span-columns(1);
+					height: $column*0.35;
+					background-color: $wh;
+				}
+				.right {
+					@include span-columns(11);
+					text-align: right;
+					font: {
+						size: 0.9em;
+						weight: bold;
+					}
+					span {
+						margin-left: 20px;
+					}
+					
+				}
+
+			}
+			.name {
+				text-shadow: 2px -2px 1px hsla(0%, 0%, 0%, 0.18);
+				margin-top: 250px;
+				text-align: right;
+				font: {
+					size: 3em;
+					weight: bold;
+				}
+			}
+			.line {
+				text-align: right;
+				font-size: 0.9em;
+			}
+			.btn {
+				button {
+					@include span-columns(3);
+					border-style: none;
+					font-weight: bold;
+					font-size: 1.5em;
+					color: $wh;
+					background-color: $orange;
+					padding: 10px 0px;
+					margin-top: -30px;
+				}
+			}
+		}
+		.features {
+			@include span-columns(12);
+			@include clearfix;
+			padding: $column 100px;
+			.features-title {
+				text-align: center;
+				margin-bottom: 50px;
+				color: $back;
+				font: {
+					size: 2em;
+					weight: bold;
+				}
+			}
+			.feature {
+				@include span-columns(6);
+				@include omega();
+				@include clearfix;
+				text-align: center;
+				.image {
+					padding: 25px 0px 0px 163px;
+					.color {
+						@include size(100px 100px);
+						border-radius: 50px;
+						background-color: #3f3e40;
+					}
+				}
+				.describe {
+					padding: 15px 25px 20px 25px;
+					.name {
+						margin-bottom: 10px;
+						color: $orange;
+						font: {
+							size: 1.3em;
+							weight: bold;
+						}
+					}
+					.text {
+						font-size: 0.9em;
+					}
+				}
+			}
+			.border-right {
+				border-right: 1px dotted $green*2;
+			}
+			.border-bottom {
+				border-bottom: 1px dotted $green*2;
+			}			
+		}
+		.footer {
+			@include span-columns(12);
+			@include clearfix;
+			background-color: $back;
+			color: $wh;
+			padding: 40px 100px;
+			font-size: 0.9em;
+			.footer-column {
+				display: inline-block;
+				@include omega();
+				width: $column*2.1;
+				padding-left: 45px;
+				.footer-title {
+					font-weight: bold;
+					margin-bottom: 20px;
+				}
+				.list {
+					color: $back*3.5;
+					font-weight: bold;
+					.item {
+						margin-bottom: 8px;
+					}
+				}
+				.green {
+					font-size: 0.8em;
+					color: $back*2.3;
+				}
+			}
+		}
+	}
+}
