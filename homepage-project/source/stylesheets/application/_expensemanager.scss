@@ -1,0 +1,250 @@
+$column: 60px;
+$gutter: 20px;
+$span-columns: 12;
+$max-width: 1140px;
+$img: 110px;
+$pr: $column*2;
+$wh: #ffffff;
+$back: #1a1a1a;
+$blue: #0092ce;
+$orange: #f37020;
+$green: #277350;
+
+@mixin img {
+	background-repeat: no-repeat;
+	background-size: $column $column;
+}
+
+@mixin action {
+	@include span-columns(12);
+	margin-bottom: 10px;
+	.in-out {
+		@include span-columns(2);
+		color: $blue;
+		font-size: 0.9em;
+		margin-top: 10px;
+		.time {
+			font-size: 0.8em;
+		}
+	}
+	.describe {
+		@include span-columns(4);
+		border: 1px solid #e6e6e6;
+		border-radius: 5px;
+		.describe-header {
+			@include span-columns(12);
+			padding: 5px 10px;
+			border-bottom: 1px solid #e6e6e6;
+			.header1 {
+				@include span-columns(8);
+				font-weight: bold;
+				font-size: 1.3em;
+			}
+			.header2 {
+				@include span-columns(8);
+				font-weight: bold;
+				font-size: 0.9e;
+				margin-top: -5px;
+				color: #a3a3a3;
+			}
+			.amount {
+				@include span-columns(4);
+				font-size: 1.6em;
+				font-weight: bold;
+				margin-top: -16px;
+				text-align: right;
+			}
+		}
+		.describe-body {
+			padding: 15px 10px;
+			font-size: 0.9em;
+			.text {
+				margin-top: 50px;
+			}
+			.via {
+				margin-top: 20px;
+				.gray {
+					color: #a3a3a3;
+				}
+				.blue {
+					color: $blue;
+					text-decoration: underline;
+					margin-left: 5px;
+				}
+			}
+		}
+	}
+}
+
+.em {
+	background-color: $wh;
+	/*font-family: "Roboto", serif;*/
+	.emcont	{
+		@include outer-container;
+		.photo {
+			@include background-image(url("../images/em.jpg"));
+			background-repeat: no-repeat;
+			background-size: $max-width 620px;
+			@include clearfix;
+			color: $blue;
+			padding: 20px 100px 40px 100px;
+			text-align: right;
+			margin-bottom: 10px;
+			.header {
+				@include span-columns(12);
+				display: inline-block;
+				color: $wh;
+				.left {
+					@include span-columns(1);
+					height: $column*0.35;
+					background-color: $wh;
+				}
+				.right {
+					@include span-columns(11);
+					text-align: right;
+					font: {
+						size: 0.9em;
+						weight: bold;
+					}
+					span {
+						margin-left: 20px;
+					}
+					
+				}
+
+			}
+			.name1 {
+				text-shadow: 1px -1px 1px hsla(0%, 0%, 0%, 0.18);
+				font-size: 2em;
+				margin-top: 80px;
+				font-weight: bold;
+			}
+			.name {
+				text-shadow: 2px -2px 1px hsla(0%, 0%, 0%, 0.18);
+				margin-bottom: 150px;
+				font: {
+					size: 3em;
+					weight: bold;
+				}
+			}
+			.line {
+				font-size: 0.9em;
+			}
+			.btn {
+				button {
+					@include span-columns(3);
+					@include shift(9);
+					border-style: none;
+					font-weight: bold;
+					font-size: 1.5em;
+					color: $wh;
+					background-color: $orange;
+					padding: 10px 0px;
+					margin-top: 60px;
+				}
+			}
+		}
+		
+
+		.budget {
+			@include span-columns(12);
+			padding: 50px 100px;
+			.budget-title {
+				font-size: 2.2em;
+			}
+			.budget-text {
+				@include span-columns(2);
+				margin-top: 50px;
+				font-size: 0.9em;
+			}
+			.look {
+				@include span-columns(12);
+
+				.look-budget {
+					@include span-columns(4);
+					@include shift(4);
+					@include box-shadow(0 0 3px 2px hsla(0%, 0%, 0%, 0.15));
+					border: 1px solid #c6c6c6;
+					padding: 10px;
+					font-size: 2em;
+					font-weight: bold;
+					text-align: center;
+					color: $blue;
+					margin-bottom: 20px;
+				}
+				.action {
+					@include action;
+					.in-out {
+						@include shift(3.5);
+						text-align: right;
+					}
+					.describe {
+						@include shift(1);
+					}
+				}
+				.action-left {
+					@include action;
+					.in-out {
+						@include shift(1);
+					}
+					.describe {
+						@include shift(1.5);
+					}
+				}
+			}
+		}
+		.timeline {
+			@include size(3px 510px);
+			background-color: $blue;
+			position: absolute;
+			margin: 150px 0px 0px 570px;
+			.circle {
+				@include size(9px 9px);
+				border-radius: 4px;
+				background-color: $blue;
+				border: 1px solid $wh;
+			}
+			.circle-one {
+				margin: 40px 0px 0px -3px;
+			}
+			.circle-two {
+				margin: 170px 0px 0px -3px;
+			}
+			.circle-three {
+				margin: 165px 0px 0px -3px;
+			}
+		}
+		img {
+			@include size($max-width auto);
+			margin-top: -55px;
+			opacity: 0.7;
+		}
+
+		.footer {
+			@include span-columns(12);
+			@include clearfix;
+			background-color: $back;
+			color: $wh;
+			padding: 20px 100px;
+			font-size: 0.9em;
+			.footer-column {
+				display: inline-block;
+				@include omega();
+				width: $column*2.1;
+				padding-left: 45px;
+				.footer-title {
+					font-weight: bold;
+					margin-bottom: 5px;
+				}
+				.list {
+					color: $back*3.5;
+					font-weight: bold;
+				}
+				.green {
+					font-size: 0.8em;
+					color: $back*2.3;
+				}
+			}
+		}
+	}
+}
