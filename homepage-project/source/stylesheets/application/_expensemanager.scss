@@ -281,20 +281,6 @@ $green: #277350;
 			}
 		}
 
-		.timeline1 {
-			@include size(1px 300px);
-			position: absolute;
-			margin: -305px 0px 0px 575px;
-			border-left: 1px dotted $blue;
-			opacity: 0.5;
-			.circle {
-				@include size(12px 12px);
-				border-radius: 6px;
-				background-color: $blue;
-				margin: 144px 0px 0px -6px;
-			}
-		}
-
 		.get-started {
 			@include span-columns(12);
 			@include clearfix;
