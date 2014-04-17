@@ -7,66 +7,56 @@ $pr: $column*2;
 $wh: #ffffff;
 $back: #999999;
 $blue: #0092ce;
-$orange: #DB651D;
+$orange: #e74c3c;
 $green: #277350;
+$hbox: 120px;
 
 @mixin img {
 	background-repeat: no-repeat;
 	background-size: $column $column;
 }
 
-@mixin action {
-	@include span-columns(8.5 of 8.5);
-	margin-bottom: 15px;
-		display: inline-block;
-	.in-out {
-		@include span-columns(1.5 of 8.5);
-		color: $blue;
-		font-size: 0.9em;
-		margin-top: 17px;
-		text-align: right;
-		i {
-			margin-left: 8px;
-		}
-	}
-	.describe {
-		@include span-columns(6 of 8.5);
-		@include shift(0.75);
-		border: 1px solid #e6e6e6;
-		border-radius: 5px;
-		@include box-shadow(0 0 3px 1px hsla(0%, 0%, 0%, 0.15));
+@mixin box {
+	@include span-columns(12);
+	height: $hbox;
+	background-color: #f2fafc;
+	margin-bottom: 40px;
+	.box-describe {
+		@include span-columns(10);
+		padding: 5px 10px;
 		.describe-header {
 			@include span-columns(12);
-			padding: 5px 10px;
-			border-bottom: 1px solid #e6e6e6;
 			.header1 {
 				@include span-columns(8);
 				font-weight: bold;
-				font-size: 1.3em;
+				font-size: 1.2em;
+				color: $orange;
 			}
 			.header2 {
 				@include span-columns(8);
 				font-weight: bold;
-				font-size: 0.9em;
+				font-size: 0.8em;
 				margin-top: -7px;
 				color: #a3a3a3;
 			}
 			.amount {
 				@include span-columns(4);
-				font-size: 1.5em;
+				font-size: 1.1em;
 				font-weight: bold;
 				margin-top: -16px;
 				text-align: right;
 			}
 		}
-		.describe-body {
-			padding: 15px 10px;
-			font-size: 0.9em;
-			.text {
-				margin-top: 50px;
-			}
+		.text {
+			@include span-columns(12);
+			font-size: 0.8em;
+			padding: 10px 0px;
+		}
+		.row {
+			@include span-columns(12);
+			font-size: 0.7em;
 			.via {
-				margin-top: 20px;
+				@include span-columns(6);
 				.gray {
 					color: #a3a3a3;
 				}
@@ -77,14 +67,25 @@ $green: #277350;
 				}
 			}
 			.time {
-				font-size: 0.8em;
+				@include span-columns(6);
+				float: right;
+				text-align: right;
 				color: #a3a3a3;
 			}
 		}
 	}
+	.box-color {
+		@include span-columns(2);
+		height: $hbox;
+		background-color: $blue;
+		border-top-left-radius: 20px;
+		border-bottom-left-radius: 20px;
+		padding: $hbox*0.4 $column*0.2;
+		color: $wh;
+	}
 }
 
-.em {
+.em1 {
 	background-color: $wh;
 	.emcont	{
 		@include outer-container;
@@ -110,7 +111,7 @@ $green: #277350;
 				.right {
 					@include span-columns(11);
 					text-align: right;
-					color: $wh;
+					color: $blue;
 					font: {
 						size: 0.9em;
 						weight: bold;
@@ -178,30 +179,32 @@ $green: #277350;
 			}
 			.look {
 				@include span-columns(8.5);
-				.look-budget {
-					@include span-columns(4);
-					@include shift(4);
-					@include box-shadow(0 0 5px 3px hsla(0%, 0%, 0%, 0.15));
-					text-shadow: 1px -1px hsla(0%, 0%, 0%, 0.15);
-					border: 1px solid #e6e6e6;
-					padding: 10px;
-					font-size: 1.9em;
-					font-weight: bold;
-					text-align: center;
-					color: $blue;
-					margin-bottom: 20px;
-				}
-				.action {
-					@include action;
-					.describe {
+				.left {
+					@include span-columns(6);
+					.box {
+						@include box;
+						/*&:after {
+							@include bubble;
+							@include box-shadow(-1px 1px 3px 0px hsla(0%, 0%, 0%, 0.15));
+							margin: 23px 0px 0px 177px;
+							background-color: $wh;
+							border-left: 1px solid #e6e6e6;
+							border-bottom: 1px solid #e6e6e6;
+						}*/
 					}
-					&:after {
-						@include bubble;
-						@include box-shadow(-1px 1px 3px 0px hsla(0%, 0%, 0%, 0.15));
-						margin: 23px 0px 0px 177px;
-						background-color: $wh;
-						border-left: 1px solid #e6e6e6;
-						border-bottom: 1px solid #e6e6e6;
+				}
+				.right {
+					@include span-columns(6);
+					margin-top: 80px;
+					margin-left: -15px;
+					.box {
+						@include box;
+						.box-color {
+							border-top-left-radius: 0px;
+							border-bottom-left-radius: 0px;
+							border-top-right-radius: 20px;
+							border-bottom-right-radius: 20px;
+						}
 					}
 				}
 			}
@@ -209,7 +212,7 @@ $green: #277350;
 		.timeline {
 			@include size(1px $column*5.8);
 			position: absolute;
-			margin: $column*0.7 0px 0px $column*3.4;
+			margin: $column*2.4 0px 0px $column*3.4;
 			border-left: 1px dotted $blue;
 			.circle {
 				@include size(12px 12px);
@@ -305,8 +308,8 @@ $green: #277350;
 					display: inline-block;
 					border-radius: $column;
 					border-top-left-radius: 0px;
-					border: 2px dotted $blue;
-					background-color: $wh;
+					border: 6px solid $wh;
+					background-color: $blue;
 				}
 				.z40 {
 					z-index: 4000;
@@ -345,6 +348,7 @@ $green: #277350;
 						font-weight: bold;
 						font-size: 1.2em;
 						margin-bottom: 5px;
+						color: $orange;
 					}
 					.step-text {
 						text-align: center;
