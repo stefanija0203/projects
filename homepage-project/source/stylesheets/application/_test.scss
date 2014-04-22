@@ -1,0 +1,30 @@
+.test1 {
+	padding: 100px;
+	background-color: #ffffff;
+	.back{
+		@include size(60px 27px);
+		@include transition (all 2.0s ease-in-out);
+		background-color: #0000ff;
+		border-radius: 14px;
+		padding: 3px;
+		.circle {
+			@include size(20px 20px);
+			background-color: #ffffff;
+			border-radius: 10px;
+			position: relative;
+
+		/*	-webkit-transition-property: transform; 
+			-webkit-transition-duration: 1s;
+			-webkit-transition-delay: 0s;
+			-webkit-transition-timing-function: ease-in;
+		*/
+		}
+		&:hover {
+			.circle {
+				margin-left: 34px;
+			}
+		}
+		
+	}
+		
+}

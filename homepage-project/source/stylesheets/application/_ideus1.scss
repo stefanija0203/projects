@@ -1,0 +1,292 @@
+$img: 110px;
+$pr: $column*2;
+$wh: #ffffff;
+$back: #333333;
+$blue: #4188d3;
+
+@mixin img {
+	background-repeat: no-repeat;
+	background-size: $column $column;
+}
+
+@mixin proba {
+	@include span-columns(3);
+	.smth1 {
+		@include size(160px 100px);
+		color: #ff0000;
+		margin: 20px 0px 0px 0px;
+		z-index: 10;
+	}
+	.ikosaedar {
+		padding: 0px $column*0.5;
+		.angle {
+			@include size(100px 100px);
+		    @include transform(rotate(-35deg));
+			background-color: $back;
+		}
+		.minus {
+		    @include transform(rotate(35deg));
+		}
+		.base {
+			@include size(165 80px);
+			background-color: $back;
+			margin: -118px 0px 0px -20px;
+			position: absolute;
+			z-index: 100;
+			color: $wh;
+			text-align: center;
+			.about-project {
+				display: none;	
+				.project-name {
+					font-weight: bold;
+					padding: 5px;
+				}
+				.project-text {
+					font-size: 0.8em;
+					padding: 10px;
+				}
+			}
+
+		}
+		.angle1 {
+			margin: 0px 0px 0px 0px;
+			z-index: 1;
+		}
+		.angle2 {
+			margin: -44px 0px 0px 25px;
+			z-index: 2;
+		}
+		.angle3 {
+			margin: -156px 0px 0px 25px;
+			z-index: 3;
+		}
+		.angle4 {
+			margin: -44px 0px 0px 0px;
+			z-index: 4;
+		}
+		&:hover {
+			.base {
+				.about-project {
+					display: inline-block;
+				}
+				i {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.id {
+	background-color: $wh;
+	/*font-family: "Roboto", serif;*/
+	.idcont	{
+		@include outer-container;
+		.photo {
+			background-color: #444444;
+			@include clearfix;
+			color: $wh;
+			.header {
+				@include span-columns(12);
+				margin-top: 10px;
+				display: inline-block;
+				text-align: center;
+				font: {
+					size: 0.9em;
+					weight: bold;
+				}
+				span {
+					margin: 20px;
+				}
+			}
+			img {
+				@include size($img $img);
+				margin-left: 490px;
+				margin-top: 140px;
+			}
+			.name {
+				text-align: center;
+				margin-top: 20px;
+				font: {
+					size: 4em;
+					weight: bold;
+				}
+			}
+			.line {
+				text-align: center;
+				font-size: 0.9em;
+			}
+			.btn {
+				button {
+					@include span-columns(2);
+					@include shift(5);
+					@include box-shadow(0 0 3px 2px hsla(0%, 0%, 0%, 0.15));
+					border-style: none;
+					font-weight: bold;
+					font-size: 1.4em;
+					color: $wh;
+					background-color: $blue;
+					margin-top: 130px;	
+					padding: 6px 0px;
+				}
+			}
+		}
+		.about {
+			@include span-columns(8);
+			@include shift(2);
+			padding: $column 0px;
+			.about-title {
+				color: $blue;
+				margin-bottom: 30px;
+				text-align: center;
+				font: {
+					size: 2em;
+					weight: bold;
+				}
+			}
+			.about-body {
+				@include span-columns(12);
+				@include clearfix;
+				margin: 25px 0px;
+				.describe {
+					@include span-columns(6);
+					text-align: center;
+					.title {
+						margin-top: 20px;
+						font-weight: bold;
+						font-size: 1.1em;
+					}
+					.text {
+						margin-top: 20px;
+						font-size: 0.8em;
+					}
+				}
+				.icon {
+					@include span-columns(6);
+					@include clearfix;
+					padding-top: 10px;
+					.border {
+						@include size(150px 150px);
+						@include clearfix;
+						@include shift(4);
+						border: 1px solid $blue;
+						border-radius: 75px;
+						img {
+							@include size(50px 50px);
+							margin: auto;
+							vertical-align: middle;
+						}
+					}
+				}
+			}
+		}
+		.projects {
+			@include span-columns(12);
+			@include clearfix;
+			.title {
+				text-align: center;
+				font-size: 2em;
+				font-weight: bold;
+				margin-bottom: 80px;
+				color: $blue;
+			}
+			.first-line {
+				@include span-columns(12);
+				@include shift(1.75);
+				.proba {
+					@include proba;
+				}
+			}
+			.second-line {
+				@include span-columns(12);
+				@include shift(3.25);
+				.proba {
+					@include proba;
+
+				}
+			}
+		}
+		.team {
+			@include span-columns(12);
+			@include clearfix;
+			padding: $column*1.5 0px;
+			.team-title {
+				@include span-columns(12);
+				text-align: center;
+				color: $blue;
+				font-size: 2em;
+				font-weight: bold;
+			}
+			.images {
+				padding: $column*1.25 0px 0px $column*3.5;
+				.img-team {
+					display: inline-block;
+					@include size($column $column);
+					@include background-image(url("../images/img6.jpg"));
+					@include img;
+					.color {
+						@include size($column $column);
+						background-color: $back;
+						opacity: 0.6;
+					}
+					&:hover {
+						.color {
+							background-color: transparent;
+						}
+					};
+				}
+				.img {
+					@include background-image(url("../images/img.jpg"));
+					@include img;
+				}
+				.img2 {
+					@include background-image(url("../images/img2.jpg"));
+					@include img;
+				}
+				.img3 {
+					@include background-image(url("../images/img3.jpg"));
+					@include img;
+				}
+				.img4 {
+					@include background-image(url("../images/img4.jpg"));
+					@include img;
+				}
+				.img5 {
+					@include background-image(url("../images/img5.jpg"));
+					@include img;
+				}
+			}
+		}
+		.footer {
+			@include span-columns(12);
+			@include clearfix;
+			background-color: $back;
+			color: $wh;
+			padding: 20px 10px;
+			font-size: 0.6em;
+			.foot1 {
+				@include span-columns(3);
+			}
+			.foot2 {
+				@include span-columns(6);
+				text-align: center;
+				.icons {
+					border-bottom: 1px dotted $back*1.8;
+					padding-bottom: 5px;
+					font-size: 1.3em;
+					i {
+						margin: 0px 10px;
+					}
+				}
+				.copy {
+					padding-top: 5px;
+					color: $back*2.5;
+				}
+			}
+			.foot3 {
+				@include span-columns(3);
+				text-align: right;
+			}
+		}
+	}
+}
