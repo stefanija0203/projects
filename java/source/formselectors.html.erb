@@ -1,0 +1,75 @@
+---
+title: Child, Visible and Content Filters
+---
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript">
+	$("document").ready(function() {
+		// $("form :input").css("border","3px solid red");
+		// $("form :text").css("border","3px solid red");
+		// $("form :text:enabled").css("border","3px solid red");
+		// $("form :text:enabled").css("border","3px solid red");
+		$("form :chekbox:checked").css("border","3px solid red");
+	});
+</script>
+<style type="text/css">
+	.style1 {
+		width: 600px;
+	}
+	.style2 {
+		width: 200px;	
+	}
+	td {
+		border: 1px dashed gray;
+	}
+</style>
+
+
+<form>
+	<table class="table1">
+		<tr>
+			<td class="style2">First Name</td>
+			<td><input type="text" name="firstname"></td>
+		</tr>
+		<tr>
+			<td class="style2">Last Name</td>
+			<td><input type="text" name="lastname"></td>
+		</tr>
+		<tr>
+			<td class="style2">Disabled Text Field</td>
+			<td><input type="text" name="disabled" disabled="disabled"></td>
+		</tr>
+		<tr>
+			<td class="style2">Gender</td>
+			<td>
+				<input type="radio" name="sex" value="male" checked="checked">M
+				<input type="radio" name="sex" value="female">F
+			</td>
+		</tr>
+		<tr>
+			<td class="style2">What products are you interested in?</td>
+			<td>
+				<input type="checkbox" name="product" value="w" checked="checked">Widgets<br>
+				<input type="checkbox" name="product" value="hj">Hibbity Jibbities<br>
+				<input type="checkbox" name="product" value="sb"checked="checked">SplashBangers<br>
+				<input type="checkbox" name="product" value="wi">Whatzits
+			</td>
+		</tr>
+		<tr>
+			<td class="style2">Comments:</td>
+			<td> <textarea rows="10" cols="48"></textarea></td>
+		</tr>
+		<tr>
+			<td class="style2">Optional life story file</td>
+			<td><input type="text" name="search"></td>
+		</tr>
+		<tr>
+			<td class="style2"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="style2"></td>
+			<td><input type="submit" value="submit"><input type="submit" value="reset"></td>
+		</tr>
+	</table>
+</form>

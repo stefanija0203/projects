@@ -1,0 +1,29 @@
+---
+title: Annotating page links
+---
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript">
+	$("document").ready(function() {
+		$("a[href$=.pdf]").after("<img src='../images/pdficon.png' align='absbottom' />");
+	});
+</script>
+<style type="text/css">
+	li {
+		margin: 5pt 0 0 5pt;
+	}
+</style>
+
+<h1>Example: Automatic Insertion of Icons for PDF Links</h1>
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.</p>
+<ul class="navlist" id="navlinks">
+	<li> <a href="someurl.html">Link #1</a></li>
+	<li> <a name="#anchor1">Named Anchor Link</a></li>
+	<li> <a href="someurl.pdf">Link #3</a></li>
+	<li> <a href="someurl.html">Link #4</a></li>
+	<li> <a href="someurl.html">Link #5</a></li>
+	<li> <a href="someurl.pdf">Link #6</a></li>
+	<li> <a href="someurl.html">Link #7</a></li>
+	<li> <a href="mailto:joe@joe.com">Email Link</a></li>
+</ul>

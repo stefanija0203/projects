@@ -1,0 +1,63 @@
+.start {
+	/* Slide 1 */
+	#slide-1 {
+		.bcg {
+		background-image:url('../parallax/img/bcg_slide-1.jpg');
+		}
+		.hsContent {
+	    margin-left: -450px;
+	    top: auto;
+		}    
+		h2 {
+		    position: fixed;
+		    top: 70%;
+		}
+	}
+
+	/* Slide 2 */
+	#slide-2 {
+		.bcg {
+		background-image:url('../parallax/img/bcg_slide-2.jpg');
+		}
+		.hsContent {
+	    margin-left: -450px;
+	    top: auto;
+		}    
+		h2 {
+		    position: fixed;
+		    top: 70%;
+		}
+	}
+
+	/* Slide 3 */
+	#slide-3 {
+		.bcg {
+		background-image:url('../parallax/img/bcg_slide-3.jpg');
+		}
+		.hsContent {
+	    margin-left: -450px;
+	    top: auto;
+		}    
+		h2 {
+		    position: fixed;
+		    top: 70%;
+		}
+	}
+
+	/* Slide 4 */
+	#slide-4 {
+		.bcg {
+			background-image:url('../parallax/img/bcg_slide-4.jpg');
+		}
+		.hsContent {
+		    margin-left: -450px;
+		    position: fixed;
+		    top: 250px;
+		}
+		h2 {
+		    background: none;
+		    padding-left: 0;
+		    padding-right: 0;
+		}
+	}
+}
