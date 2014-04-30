@@ -1,0 +1,27 @@
+---
+title: Event Object
+---
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript">
+	$(function() {
+		$("div").click(function(evt) {
+			$(this).html("pageX: " + evt.pageX + ", pageY: " + evt.pageY + ", type: " + evt.type + ", target: " + evt.target)
+		})
+	});	
+</script>
+<style type="text/css">
+	.normal {
+		width: 300px;
+		height: 200px;
+		background-color: silver;
+		font-size: 18px;
+		margin: 10px;
+	}
+</style>
+
+
+<h1>Using the jQuery Event Object</h1>
+<div class="normal" id="Div1">Click on this div (Div1) to see the event information.</div>
+<div class="normal" id="Div2">Click on this div (Div2) to see the event information.</div>
+<div class="normal" id="Div3">Click on this div (Div3) to see the event information.</div>

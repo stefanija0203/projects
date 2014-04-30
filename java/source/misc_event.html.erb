@@ -1,0 +1,33 @@
+---
+title: Event Object
+---
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript">
+	$(function() {
+		$("div").one("click", function(evt) {
+			$(this).css({ background: "red", cursor: "auto"});
+		});
+	});	
+</script>
+<style type="text/css">
+	div {
+		width: 60px;
+		height: 60px;
+		background-color: blue;
+		border: 2px solid black;
+		float: left;
+		margin: 10pt;
+	}
+	p {
+		font-size: 18pt;
+	}
+</style>
+
+
+<p>Click on each square to change color</p>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>

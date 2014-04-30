@@ -1,0 +1,41 @@
+---
+title: Data
+---
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript">
+	$("document").ready(function() {
+		$("#store").click(function() {
+			$("#div1").data("key1", 1234);
+			$("#div1").data("key2", "Joe Marini");
+		});
+		$("#remove").click(function() {
+			$("#div1").removeData();
+		});
+		$("#show").click(function() {
+			// alert($("#div1").data("key1"));
+			// alert($("#div1").data("key2"));
+			alert(JSON.stringify($("#div1").data(),null,"   "));
+		});
+	});
+</script>
+<style type="text/css">
+	#div1 {
+		width: 200px;
+		height: 100px;
+		background-color: blue;
+		color: white;
+		display: inline-block;
+	}
+</style>
+
+
+<h1>Using the data methods </h1>
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua</p>
+<div id="div1" data-key3="data attribute">Sample DIV</div>
+<p>
+	<button id="store">Click to store data</button>
+	<button id="remove">Click to remove data</button>
+	<button id="show">Click to show data</button>
+</p>
