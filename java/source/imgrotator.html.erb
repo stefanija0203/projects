@@ -1,0 +1,59 @@
+---
+title: Image Rotator
+---
+
+<link rel="stylesheet" type="text/css" href="../css/sunny/jquery-ui-1.10.4.custom.css">
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript" src="../javascripts/jquery-ui-1.10.4.custom.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		setInterval("rotateImages()", 2000);
+	});
+	function rotateImages() {
+		var oCurPhoto = $("#photoShow div.current");
+		var oNxtPhoto = oCurPhoto.next();
+		if (oNxtPhoto.lenght == 0)
+			oNxtPhoto = $('#photoShow div:first');
+		oCurPhoto.removeClass('current').addClass('previous');
+		oNxtPhoto.css({opacity: 0.0}).addClass('current').animate({opacity: 1.0}, 1000,
+			function() {
+				oCurPhoto.removeClass('previous');
+			});
+	}
+</script>
+<style type="text/css">
+	#photoShow {
+		position: relative;
+		height: 190px;
+		width: 240px;
+		margin: 30px;
+	}
+	#photoShow div {
+		position: absolute;
+		z-index: 0;
+	}
+	#photoShow div.previous {
+		z-index: 1;
+	}
+	#photoShow div.current {
+		z-index: 2;
+	}
+</style>
+
+
+<div id="photoShow">
+	<div class="current">
+		<img src="../images/first.jpg" alt="Photo Gallery" width="200" height="160" class="gallery">
+	</div>
+	<div>
+		<img src="../images/second.jpg" alt="Photo Gallery" width="200" height="160" class="gallery">
+	</div>
+	<div>
+		<img src="../images/third.jpg" alt="Photo Gallery" width="200" height="160" class="gallery">
+	</div>
+	<div>
+		<img src="../images/fourth.jpg" alt="Photo Gallery" width="200" height="160" class="gallery">
+	</div>
+</div>

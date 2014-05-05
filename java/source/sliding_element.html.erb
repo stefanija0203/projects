@@ -1,0 +1,47 @@
+---
+title: Show - Hide
+---
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript">
+	$(function() {
+		// $("#slideup").click(function() {
+		// 	$("#theDiv").slideUp("normal");
+		// });
+		$("#slideup").click(function() {
+			$("#theDiv").slideUp(4000, function() {
+				alert("slide complete");
+			});
+		});
+		$("#slidedown").click(function() {
+			$("#theDiv").slideDown("normal");
+		});
+		$("#toggle").click(function() {
+			$("#theDiv").slideToggle("slow");
+		});
+	});	
+</script>
+<style type="text/css">
+	#theDiv {
+		width: 250px;
+		height: 180px;
+		margin: 10px;
+		padding: 20px;
+		background-color: blue;
+		border: 2px solid black;
+		cursor: pointer;
+	}
+	p {
+		font-size: 16pt;
+	}
+	button {
+		margin: 5px;
+	}
+</style>
+
+
+<p>Sliding an Element</p>
+<div id="theDiv"></div>
+<button id="slideup">Slide Up</button>
+<button id="slidedown">Slide Down</button>
+<button id="toggle">Toggle Slide</button>

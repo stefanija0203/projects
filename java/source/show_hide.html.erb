@@ -1,0 +1,47 @@
+---
+title: Show - Hide
+---
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript">
+	$(function() {
+		// $("#show").click(function() {
+		// 	$("#theDiv").show("normal");
+		// });
+		$("#show").click(function() {
+			$("#theDiv").show(5000, function() {
+				alert("done showing");
+			});
+		});
+		$("#hide").click(function() {
+			$("#theDiv").hide("normal");
+		});
+		$("#toggle").click(function() {
+			$("#theDiv").toggle("slow");
+		});
+	});	
+</script>
+<style type="text/css">
+	#theDiv {
+		width: 250px;
+		height: 180px;
+		margin: 10px;
+		padding: 20px;
+		background-color: blue;
+		border: 2px solid black;
+		cursor: pointer;
+	}
+	p {
+		font-size: 16pt;
+	}
+	button {
+		margin: 5px;
+	}
+</style>
+
+
+<p>Showing and Hiding an Element</p>
+<div id="theDiv"></div>
+<button id="show">Show</button>
+<button id="hide">Hide</button>
+<button id="toggle">Toggle</button>

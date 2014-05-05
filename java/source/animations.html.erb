@@ -1,0 +1,47 @@
+---
+title: Animations
+---
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript">
+	$(function() {
+		$("#right").click(function() {
+			$("#theDiv").animate({width: "500px"}, 1000);
+		});
+		$("#text").click(function() {
+			$("#theDiv").animate({fontSize: "24pt"}, 1000);
+		});
+		$("#toggle").click(function() {
+			$("#theDiv").animate({left: "500"}, 1000, "swing");
+		});
+		$("#multiple").click(function() {
+			$("#theDiv").animate({left: "500", width: "500px", fontSize: "24pt"}, 1000, "linear");
+		});
+	});	
+</script>
+<style type="text/css">
+	#theDiv {
+		position: relative;
+		width: 250px;
+		height: 180px;
+		margin: 10px;
+		padding: 20px;
+		background-color: cyan;
+		border: 2px solid black;
+		cursor: pointer;
+	}
+	p {
+		font-size: 16pt;
+	}
+	button {
+		margin: 5px;
+	}
+</style>
+
+
+<p>Animating an Element</p>
+<div id="theDiv">Animate me</div>
+<button id="right">Grow right</button>
+<button id="text">Big text</button>
+<button id="toggle">Move div</button>
+<button id="multiple">Everything</button>

@@ -1,0 +1,55 @@
+---
+title: Image Rotator
+---
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript">
+	$(function() {
+		setInterval("rotateImages()", 2000);
+	});
+	function rotateImages() {
+		var oCurPhoto = $("#photoShow div.current");
+		var oNxtPhoto = oCurPhoto.next();
+		if (oNxtPhoto.lenght == 0)
+			oNxtPhoto = $("#photoShow div:first");
+
+		oCurPhoto.removeClass('current').addClass('previous');
+		oNxtPhoto.css({opacity: 0.0}).addClass('current').animate({opacity:1.0}, 1000, 
+			function() {
+				oCurPhoto.removeClass('previous');
+			});
+	}
+</script>
+<style type="text/css">
+	#photoShow {
+		height: 400px;
+		width: 400px;
+	}
+	#photoShow div {
+		position: absolute;
+		z-index: 0;
+	}
+	#photoShow div.previous {
+		z-index: 1;
+	}
+	#photoShow div.current {
+		z-index: 2;
+	}
+</style>
+
+
+<h1>jQuery-based Image Rotator</h1>
+<div id="photoShow">
+	<div class="current">
+		<img src="../images/first.jpg" alt="Photo Galery" width="400" height="400" class="gallery">
+	</div>
+	<div>
+		<img src="../images/second.jpg" alt="Photo Galery" width="400" height="400" class="gallery">
+	</div>
+	<div>
+		<img src="../images/third.jpg" alt="Photo Galery" width="400" height="400" class="gallery">
+	</div>
+	<div>
+		<img src="../images/fourth.jpg" alt="Photo Galery" width="400" height="400" class="gallery">
+	</div>
+</div>
