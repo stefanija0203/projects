@@ -1,0 +1,34 @@
+---
+title: Resizable Effect - ?
+---
+
+<link rel="stylesheet" type="text/css" href="../css/sunny/jquery-ui-1.10.4.custom.css">
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript" src="../javascripts/jquery-ui-1.10.4.custom.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		var maxw = $("#commentsSection").width();
+		var minw = maxw;
+		var minh = $("#commentsSection").height();
+
+		$("#commentsSection").resizable({
+			maxWidth: maxw;
+			minHeight: minh;
+			minWidth: minw;
+		});
+	});
+</script>
+<style type="text/css">
+	
+</style>
+
+
+<div id="commentsSection">
+	<textarea name="comments" id="comments" cols="45" rows="5" tabindex="140"></textarea>
+</div>
+<p>
+	<input id="journal" type="checkbox" name="journal" tabindex="150"></input>
+	<label for="journal"> I want to submit a journal!</label>
+</p>

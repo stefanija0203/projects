@@ -1,0 +1,54 @@
+---
+title: Using the Ajax Function - ?
+---
+
+<link rel="stylesheet" type="text/css" href="../css/sunny/jquery-ui-1.10.4.custom.css">
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript" src="../javascripts/jquery-ui-1.10.4.custom.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		getData();
+	});
+
+	function getData() {
+		$.ajax({
+			url: "testdata.txt",
+
+			type: "GET",
+
+			dataType: "text",
+
+			success: successFn,
+
+			errror: errorFn,
+
+			complete: function(xhr, status) {
+				console.log("The request is complete!");
+			}
+		});
+	}
+
+	function successFn(result) {
+		console.log("Setting result");
+		$("#content").append(result);
+	}
+
+	function errorFn(xhr, status, strErr) {
+		console.log("There was an error!");
+	}
+</script>
+<style type="text/css">
+	body {
+		margin: 10px;
+	}
+	#content {
+		padding: 5pt;
+		border: 2px dashed lightgray;
+	}
+</style>
+
+
+<h1>Using the basic Ajax function</h1>
+<p id="content"></p>

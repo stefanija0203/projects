@@ -1,0 +1,45 @@
+---
+title: Image Selector
+---
+
+<link rel="stylesheet" type="text/css" href="../css/sunny/jquery-ui-1.10.4.custom.css">
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript" src="../javascripts/jquery-ui-1.10.4.custom.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$("a:has(img.gallery)").click(function() {
+			var largePath = $(this).attr("href");
+			var caption = $(this).attr("title");
+
+			$("#photo_large").attr({src: largePath});
+			$("caption1").text(caption);
+			return false;
+		});
+	});
+</script>
+<style type="text/css">
+	
+</style>
+
+
+<div id="sidebar">
+	<a href="../images/first.jpg" title="Getting ready to hit the surf">
+		<img src="../images/first.jpg" id="thumb_01" alt="ventura set" class="gallery" height="160" width="200" name="thumb_01">
+	</a>
+	<a href="../images/second.jpg" title="Clearly marked!">
+		<img src="../images/second.jpg" id="thumb_02" alt="ventura set" class="gallery" height="160" width="200" name="thumb_02">
+	</a>
+	<a href="../images/third.jpg" title="Check out the windsurefrs in the background">
+		<img src="../images/third.jpg" id="thumb_03" alt="ventura set" class="gallery" height="160" width="200" name="thumb_03">
+	</a>
+	<a href="../images/fourth.jpg" title="Winding down">
+		<img src="../images/fourth.jpg" id="thumb_04" alt="ventura set" class="gallery" height="160" width="200" name="thumb_04">
+	</a>
+</div>
+
+<div class="photoGroup">
+	<img id="photo_large" height="340" width="450"></img>
+	<p class="caption" id="caption1">Getting ready to hit the surf</p>
+</div>

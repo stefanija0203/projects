@@ -9,51 +9,34 @@ title: Hover Tooltips
 
 <script type="text/javascript">
 	$(function() {
-		setInterval("rotateImages()", 2000);
-	});
-	function rotateImages() {
-		var oCurPhoto = $("#photoShow div.current");
-		var oNxtPhoto = oCurPhoto.next();
-		if (oNxtPhoto.lenght == 0)
-			oNxtPhoto = $('#photoShow div:first');
-		oCurPhoto.removeClass('current').addClass('previous');
-		oNxtPhoto.css({opacity: 0.0}).addClass('current').animate({opacity: 1.0}, 1000,
+		$("#viewlarger").hover(
 			function() {
-				oCurPhoto.removeClass('previous');
-			});
-	}
+				var offset = $("#gearItem").offset();
+				$("#tooltip1").css("top", offset.top).css("left", offset.left).css("display", "block");
+				$("#tooltip1").animate({opacity:1.0}, 300);
+			},
+			function() {
+				$("#tooltip1").animate({opacity: 0.0}, 300, function() {
+					$("#tooltip1").css("display", "none");
+				})
+
+			}
+		);
+	});
 </script>
 <style type="text/css">
-	#photoShow {
-		position: relative;
-		height: 190px;
-		width: 240px;
-		margin: 30px;
-	}
-	#photoShow div {
+	.tooltipContent {
 		position: absolute;
-		z-index: 0;
-	}
-	#photoShow div.previous {
-		z-index: 1;
-	}
-	#photoShow div.current {
-		z-index: 2;
+		display: none;
+		opacity: 0.0;
 	}
 </style>
 
+<div id="gearItem">
+	<img src="../images/first.jpg" alt="swell suit" width="120" height="350">
+	<p>view larger: <a href="hover_large.html.erb" target="_blank" id="viewlarger"> [+]</a></p>
+</div>
 
-<div id="photoShow">
-	<div class="current">
-		<img src="../images/first.jpg" alt="Photo Gallery" width="200" height="160" class="gallery">
-	</div>
-	<div>
-		<img src="../images/second.jpg" alt="Photo Gallery" width="200" height="160" class="gallery">
-	</div>
-	<div>
-		<img src="../images/third.jpg" alt="Photo Gallery" width="200" height="160" class="gallery">
-	</div>
-	<div>
-		<img src="../images/fourth.jpg" alt="Photo Gallery" width="200" height="160" class="gallery">
-	</div>
+<div class="tooltipContent" id="tooltip1">
+	<img src="../images/first.jpg" width="510" height="310">
 </div>
