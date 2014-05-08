@@ -10,10 +10,75 @@
     <title><%= current_page.data.title || "The Middleman" %></title>
     
     <%= stylesheet_link_tag "normalize", "all" %>
-    <%= javascript_include_tag  "all" %>
+    <%= javascript_include_tag  "all", "skrollr", "nature_main" %>
   </head>
+  
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
   
   <body class="<%= page_classes %>">
     <%= yield %>
   </body>
+
+    <!-- parallax -->
+  <script type="text/javascript">
+      // Init skrollr
+      var s = skrollr.init();
+
+      // Refresh Skrollr afer resizing our section
+      s.refresh($('homeSlide'));
+  </script>
+
+  <!-- parallax1 -->
+  <!-- 
+   <script type="text/javascript">
+    $(document).ready(function(){
+        $('section[data-type="background"]').each(function(){
+            var $bgobj = $(this);
+         
+            $(window).scroll(function() {
+                var yPos = -($window.scrollTop() / $bgobj.data('speed')); 
+                 
+                var coords = '50% '+ yPos + 'px';
+     
+                $bgobj.css({ backgroundPosition: coords });
+            }); 
+        });    
+    });
+  </script>
+  -->
+    
+  <!-- parallax2 -->
+  <!-- 
+  <script type="text/javascript">
+    // The plugin code
+    (function($){
+        $.fn.parallax = function(options){
+            var $$ = $(this);
+            offset = $$.offset();
+            var defaults = {
+                "start": 0,
+                "stop": 0 + $$.height(),
+                "coeff": 0.95
+            };
+            var opts = $.extend(defaults, options);
+            return this.each(function(){
+                $(window).bind('scroll', function() {
+                    windowTop = $(window).scrollTop();
+                    if((windowTop >= opts.start) && (windowTop <= opts.stop)) {
+                        newCoord = windowTop * opts.coeff;
+                        $$.css({
+                            "background-position": "0 "+ newCoord + "px"
+                        });
+                    }
+                });
+            });
+        };
+    })(jQuery);
+
+  // call the plugin
+  $('.section').parallax({ "coeff":-0.65 });
+  $('.section .inner').parallax({ "coeff":1.15 });
+  </script>
+ -->
 </html>
+

@@ -1,0 +1,55 @@
+---
+title: Parallax
+---
+
+<link rel="stylesheet" type="text/css" href="../css/sunny/jquery-ui-1.10.4.custom.css">
+
+<script type="text/javascript" src="../jquery-1.11.0.js"></script> <!-- reference jquery -->
+<script type="text/javascript" src="../javascripts/jquery-ui-1.10.4.custom.js"></script>
+
+
+<style type="text/css">
+	#home {
+	background: url('../images/first.jpg') 50% 0 fixed;
+	min-height: 1000px;
+	height: 1000px;
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
+	position: relative;
+	}
+	#home article {
+		height: 458px;
+		position: absolute;
+		text-align: center;
+		top: 150px;
+		width: 100%;
+	}
+
+	#about {
+		background: url('../images/second.jpg') 50% 0 fixed;
+		min-height: 1000px;
+		height: 1000px;
+		width: 100%;
+		max-width: 1920px;
+		margin: 0 auto;
+		position: relative;
+	}
+	#about article {
+		height: 458px;
+		position: absolute;
+		text-align: center;
+		top: 150px;
+		width: 100%;
+	}
+</style>
+
+
+<section id="home" data-type="background" data-speed="10">
+	<article>I'm absolute positioned</article>
+</section>
+
+
+<section id="about" data-type="background" data-speed="10">
+	<article>Simple Parallax Scroll</article>
+</section>

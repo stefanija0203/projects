@@ -1,0 +1,33 @@
+#home {
+	background: url('../images/first.jpg') 50% 0 repeat fixed;
+	min-height: 1000px;
+	height: 1000px;
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
+	position: relative;
+	article {
+		height: 458px;
+		position: absolute;
+		text-align: center;
+		top: 150px;
+		width: 100%;
+	}
+}
+
+#about {
+	background: url('../images/second.jpg') 50% 0 repeat fixed;
+	min-height: 1000px;
+	height: 1000px;
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
+	position: relative;
+	article {
+		height: 458px;
+		position: absolute;
+		text-align: center;
+		top: 150px;
+		width: 100%;
+	}
+}
